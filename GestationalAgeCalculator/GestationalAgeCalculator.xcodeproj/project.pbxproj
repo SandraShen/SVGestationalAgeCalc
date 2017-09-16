@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B62C20A51F6CC58300673BD1 /* LmpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C20A41F6CC58300673BD1 /* LmpViewController.swift */; };
+		B62C20A71F6CC5CD00673BD1 /* EddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C20A61F6CC5CD00673BD1 /* EddViewController.swift */; };
+		B656B18F1F6CEED800B8EF5C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B656B18E1F6CEED800B8EF5C /* BaseViewController.swift */; };
+		B657F28B1F6407460099A52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657F28A1F6407460099A52F /* AppDelegate.swift */; };
+		B657F28D1F6407460099A52F /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657F28C1F6407460099A52F /* MenuViewController.swift */; };
+		B657F2901F6407460099A52F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B657F28E1F6407460099A52F /* Main.storyboard */; };
+		B657F2921F6407460099A52F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B657F2911F6407460099A52F /* Assets.xcassets */; };
+		B657F2951F6407460099A52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B657F2931F6407460099A52F /* LaunchScreen.storyboard */; };
+		B657F2A01F6407460099A52F /* GestationalAgeCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657F29F1F6407460099A52F /* GestationalAgeCalculatorTests.swift */; };
+		B657F2AB1F6407460099A52F /* GestationalAgeCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657F2AA1F6407460099A52F /* GestationalAgeCalculatorUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B657F29C1F6407460099A52F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B657F27F1F6407460099A52F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B657F2861F6407460099A52F;
+			remoteInfo = GestationalAgeCalculator;
+		};
+		B657F2A71F6407460099A52F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B657F27F1F6407460099A52F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B657F2861F6407460099A52F;
+			remoteInfo = GestationalAgeCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B62C20A41F6CC58300673BD1 /* LmpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LmpViewController.swift; sourceTree = "<group>"; };
+		B62C20A61F6CC5CD00673BD1 /* EddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EddViewController.swift; sourceTree = "<group>"; };
+		B656B18E1F6CEED800B8EF5C /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B657F2871F6407460099A52F /* GestationalAgeCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GestationalAgeCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B657F28A1F6407460099A52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B657F28C1F6407460099A52F /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B657F28F1F6407460099A52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B657F2911F6407460099A52F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B657F2941F6407460099A52F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B657F2961F6407460099A52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B657F29B1F6407460099A52F /* GestationalAgeCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestationalAgeCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B657F29F1F6407460099A52F /* GestationalAgeCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestationalAgeCalculatorTests.swift; sourceTree = "<group>"; };
+		B657F2A11F6407460099A52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B657F2A61F6407460099A52F /* GestationalAgeCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestationalAgeCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B657F2AA1F6407460099A52F /* GestationalAgeCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestationalAgeCalculatorUITests.swift; sourceTree = "<group>"; };
+		B657F2AC1F6407460099A52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B657F2841F6407460099A52F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B657F2981F6407460099A52F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B657F2A31F6407460099A52F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B657F27E1F6407460099A52F = {
+			isa = PBXGroup;
+			children = (
+				B657F2891F6407460099A52F /* GestationalAgeCalculator */,
+				B657F29E1F6407460099A52F /* GestationalAgeCalculatorTests */,
+				B657F2A91F6407460099A52F /* GestationalAgeCalculatorUITests */,
+				B657F2881F6407460099A52F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B657F2881F6407460099A52F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B657F2871F6407460099A52F /* GestationalAgeCalculator.app */,
+				B657F29B1F6407460099A52F /* GestationalAgeCalculatorTests.xctest */,
+				B657F2A61F6407460099A52F /* GestationalAgeCalculatorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B657F2891F6407460099A52F /* GestationalAgeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				B657F28A1F6407460099A52F /* AppDelegate.swift */,
+				B657F28C1F6407460099A52F /* MenuViewController.swift */,
+				B656B18E1F6CEED800B8EF5C /* BaseViewController.swift */,
+				B62C20A41F6CC58300673BD1 /* LmpViewController.swift */,
+				B62C20A61F6CC5CD00673BD1 /* EddViewController.swift */,
+				B657F28E1F6407460099A52F /* Main.storyboard */,
+				B657F2911F6407460099A52F /* Assets.xcassets */,
+				B657F2931F6407460099A52F /* LaunchScreen.storyboard */,
+				B657F2961F6407460099A52F /* Info.plist */,
+			);
+			path = GestationalAgeCalculator;
+			sourceTree = "<group>";
+		};
+		B657F29E1F6407460099A52F /* GestationalAgeCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				B657F29F1F6407460099A52F /* GestationalAgeCalculatorTests.swift */,
+				B657F2A11F6407460099A52F /* Info.plist */,
+			);
+			path = GestationalAgeCalculatorTests;
+			sourceTree = "<group>";
+		};
+		B657F2A91F6407460099A52F /* GestationalAgeCalculatorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B657F2AA1F6407460099A52F /* GestationalAgeCalculatorUITests.swift */,
+				B657F2AC1F6407460099A52F /* Info.plist */,
+			);
+			path = GestationalAgeCalculatorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B657F2861F6407460099A52F /* GestationalAgeCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B657F2AF1F6407460099A52F /* Build configuration list for PBXNativeTarget "GestationalAgeCalculator" */;
+			buildPhases = (
+				B657F2831F6407460099A52F /* Sources */,
+				B657F2841F6407460099A52F /* Frameworks */,
+				B657F2851F6407460099A52F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GestationalAgeCalculator;
+			productName = GestationalAgeCalculator;
+			productReference = B657F2871F6407460099A52F /* GestationalAgeCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B657F29A1F6407460099A52F /* GestationalAgeCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B657F2B21F6407460099A52F /* Build configuration list for PBXNativeTarget "GestationalAgeCalculatorTests" */;
+			buildPhases = (
+				B657F2971F6407460099A52F /* Sources */,
+				B657F2981F6407460099A52F /* Frameworks */,
+				B657F2991F6407460099A52F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B657F29D1F6407460099A52F /* PBXTargetDependency */,
+			);
+			name = GestationalAgeCalculatorTests;
+			productName = GestationalAgeCalculatorTests;
+			productReference = B657F29B1F6407460099A52F /* GestationalAgeCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B657F2A51F6407460099A52F /* GestationalAgeCalculatorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B657F2B51F6407460099A52F /* Build configuration list for PBXNativeTarget "GestationalAgeCalculatorUITests" */;
+			buildPhases = (
+				B657F2A21F6407460099A52F /* Sources */,
+				B657F2A31F6407460099A52F /* Frameworks */,
+				B657F2A41F6407460099A52F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B657F2A81F6407460099A52F /* PBXTargetDependency */,
+			);
+			name = GestationalAgeCalculatorUITests;
+			productName = GestationalAgeCalculatorUITests;
+			productReference = B657F2A61F6407460099A52F /* GestationalAgeCalculatorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B657F27F1F6407460099A52F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = OritoClinic;
+				TargetAttributes = {
+					B657F2861F6407460099A52F = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 8Z8KPYC43M;
+						ProvisioningStyle = Automatic;
+					};
+					B657F29A1F6407460099A52F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B657F2861F6407460099A52F;
+					};
+					B657F2A51F6407460099A52F = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B657F2861F6407460099A52F;
+					};
+				};
+			};
+			buildConfigurationList = B657F2821F6407460099A52F /* Build configuration list for PBXProject "GestationalAgeCalculator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B657F27E1F6407460099A52F;
+			productRefGroup = B657F2881F6407460099A52F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B657F2861F6407460099A52F /* GestationalAgeCalculator */,
+				B657F29A1F6407460099A52F /* GestationalAgeCalculatorTests */,
+				B657F2A51F6407460099A52F /* GestationalAgeCalculatorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B657F2851F6407460099A52F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B657F2951F6407460099A52F /* LaunchScreen.storyboard in Resources */,
+				B657F2921F6407460099A52F /* Assets.xcassets in Resources */,
+				B657F2901F6407460099A52F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B657F2991F6407460099A52F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B657F2A41F6407460099A52F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B657F2831F6407460099A52F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B656B18F1F6CEED800B8EF5C /* BaseViewController.swift in Sources */,
+				B62C20A51F6CC58300673BD1 /* LmpViewController.swift in Sources */,
+				B657F28D1F6407460099A52F /* MenuViewController.swift in Sources */,
+				B62C20A71F6CC5CD00673BD1 /* EddViewController.swift in Sources */,
+				B657F28B1F6407460099A52F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B657F2971F6407460099A52F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B657F2A01F6407460099A52F /* GestationalAgeCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B657F2A21F6407460099A52F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B657F2AB1F6407460099A52F /* GestationalAgeCalculatorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B657F29D1F6407460099A52F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B657F2861F6407460099A52F /* GestationalAgeCalculator */;
+			targetProxy = B657F29C1F6407460099A52F /* PBXContainerItemProxy */;
+		};
+		B657F2A81F6407460099A52F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B657F2861F6407460099A52F /* GestationalAgeCalculator */;
+			targetProxy = B657F2A71F6407460099A52F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B657F28E1F6407460099A52F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B657F28F1F6407460099A52F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B657F2931F6407460099A52F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B657F2941F6407460099A52F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B657F2AD1F6407460099A52F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B657F2AE1F6407460099A52F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B657F2B01F6407460099A52F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8Z8KPYC43M;
+				INFOPLIST_FILE = GestationalAgeCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = OritoClinic.GestationalAgeCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B657F2B11F6407460099A52F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8Z8KPYC43M;
+				INFOPLIST_FILE = GestationalAgeCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = OritoClinic.GestationalAgeCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B657F2B31F6407460099A52F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GestationalAgeCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = OritoClinic.GestationalAgeCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GestationalAgeCalculator.app/GestationalAgeCalculator";
+			};
+			name = Debug;
+		};
+		B657F2B41F6407460099A52F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GestationalAgeCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = OritoClinic.GestationalAgeCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GestationalAgeCalculator.app/GestationalAgeCalculator";
+			};
+			name = Release;
+		};
+		B657F2B61F6407460099A52F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = GestationalAgeCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = OritoClinic.GestationalAgeCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GestationalAgeCalculator;
+			};
+			name = Debug;
+		};
+		B657F2B71F6407460099A52F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = GestationalAgeCalculatorUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = OritoClinic.GestationalAgeCalculatorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GestationalAgeCalculator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B657F2821F6407460099A52F /* Build configuration list for PBXProject "GestationalAgeCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B657F2AD1F6407460099A52F /* Debug */,
+				B657F2AE1F6407460099A52F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B657F2AF1F6407460099A52F /* Build configuration list for PBXNativeTarget "GestationalAgeCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B657F2B01F6407460099A52F /* Debug */,
+				B657F2B11F6407460099A52F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B657F2B21F6407460099A52F /* Build configuration list for PBXNativeTarget "GestationalAgeCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B657F2B31F6407460099A52F /* Debug */,
+				B657F2B41F6407460099A52F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B657F2B51F6407460099A52F /* Build configuration list for PBXNativeTarget "GestationalAgeCalculatorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B657F2B61F6407460099A52F /* Debug */,
+				B657F2B71F6407460099A52F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B657F27F1F6407460099A52F /* Project object */;
+}
