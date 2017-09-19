@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jwv-9e-Uej">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jwv-9e-Uej">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,28 +38,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-6T-dWQ">
-                                <rect key="frame" x="28" y="212" width="320" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x00-1I-tT3">
+                                <rect key="frame" x="27.5" y="212.5" width="320" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="uK1-kC-Kvl"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="最終月経開始日から計算">
+                                        <attributes>
+                                            <color key="NSColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="23" name="HiraginoSans-W4"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-6T-dWQ">
+                                <rect key="frame" x="28" y="212" width="320" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="aYE-Q6-dEd"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="最終月経開始日から計算" image="btn_icon_circle">
+                                <state key="normal">
                                     <color key="titleColor" red="0.16078431372549018" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="fyG-gu-mZv" kind="show" id="NbD-tP-cCv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZC-Pk-RDO">
-                                <rect key="frame" x="27" y="268" width="320" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUo-uD-zkf">
+                                <rect key="frame" x="28" y="279" width="320" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Kai-QQ-qth"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="分娩予定日から計算">
+                                        <attributes>
+                                            <color key="NSColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="23" name="HiraginoSans-W4"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZC-Pk-RDO">
+                                <rect key="frame" x="27" y="279" width="320" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="vzX-jr-d5P"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="15"/>
-                                <inset key="imageEdgeInsets" minX="-22" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="分娩予定日から計算" image="btn_icon_circle">
+                                <state key="normal">
                                     <color key="titleColor" red="0.16078431372549018" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -97,26 +126,71 @@
                                     <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="s1Y-2s-VcW"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv8-6l-Rs0">
+                                <rect key="frame" x="157" y="421" width="60" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="Mn3-4d-qXX"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="おまけ">
+                                        <attributes>
+                                            <color key="NSColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="20" name="HiraginoSans-W4"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNQ-0N-zc5">
+                                <rect key="frame" x="116" y="461" width="144" height="30"/>
+                                <state key="normal" title="体格指数(BMI)計算機">
+                                    <color key="titleColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IN4-Pg-XSa" kind="show" id="T6I-wm-kbo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VeW-w1-tbg">
+                                <rect key="frame" x="105" y="507" width="164" height="30"/>
+                                <state key="normal" title="暗算力鍛錬(待ち時間用)">
+                                    <color key="titleColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="rAl-6T-dWQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4CZ-S6-p2B"/>
                             <constraint firstItem="z6n-uG-VZc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="8Oc-gL-gpu"/>
+                            <constraint firstItem="wUo-uD-zkf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aza-6l-BNH"/>
+                            <constraint firstItem="oNQ-0N-zc5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cx6-Oh-4wP"/>
+                            <constraint firstItem="rAl-6T-dWQ" firstAttribute="width" secondItem="x00-1I-tT3" secondAttribute="width" id="E2o-EO-P53"/>
+                            <constraint firstItem="x00-1I-tT3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Hsc-4E-mLu"/>
                             <constraint firstItem="7il-Jr-XKq" firstAttribute="centerX" secondItem="z6n-uG-VZc" secondAttribute="centerX" id="K4c-c6-05I"/>
                             <constraint firstItem="z6n-uG-VZc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KLt-t4-ipn"/>
+                            <constraint firstItem="VeW-w1-tbg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KyJ-rD-vlh"/>
+                            <constraint firstItem="x00-1I-tT3" firstAttribute="centerY" secondItem="rAl-6T-dWQ" secondAttribute="centerY" id="L8q-rJ-NCL"/>
+                            <constraint firstItem="wUo-uD-zkf" firstAttribute="centerY" secondItem="GZC-Pk-RDO" secondAttribute="centerY" id="PO5-wD-T3P"/>
+                            <constraint firstItem="wUo-uD-zkf" firstAttribute="width" secondItem="GZC-Pk-RDO" secondAttribute="width" id="RAl-wQ-zwi"/>
                             <constraint firstItem="GZC-Pk-RDO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ROn-fw-m57"/>
                             <constraint firstItem="rAl-6T-dWQ" firstAttribute="top" secondItem="7il-Jr-XKq" secondAttribute="bottom" constant="58" id="RzP-GG-GHS"/>
+                            <constraint firstItem="yv8-6l-Rs0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SG6-3X-GQD"/>
                             <constraint firstItem="7il-Jr-XKq" firstAttribute="top" secondItem="z6n-uG-VZc" secondAttribute="bottom" constant="16" id="XiO-ab-tdd"/>
+                            <constraint firstItem="VeW-w1-tbg" firstAttribute="top" secondItem="oNQ-0N-zc5" secondAttribute="bottom" constant="16" id="Yi4-dk-LlS"/>
+                            <constraint firstItem="asJ-uF-f3K" firstAttribute="top" secondItem="VeW-w1-tbg" secondAttribute="bottom" constant="32" id="eBb-U0-iB9"/>
                             <constraint firstItem="asJ-uF-f3K" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gx4-7U-h68"/>
                             <constraint firstItem="GZC-Pk-RDO" firstAttribute="top" secondItem="rAl-6T-dWQ" secondAttribute="bottom" constant="40" id="hbd-FF-Od2"/>
+                            <constraint firstItem="oNQ-0N-zc5" firstAttribute="top" secondItem="yv8-6l-Rs0" secondAttribute="bottom" constant="16" id="u9p-OA-ajl"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="asJ-uF-f3K" secondAttribute="bottom" constant="64" id="uJa-ga-sP9"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="妊娠週数計算機" id="Pqu-Ug-lyd"/>
                     <connections>
                         <outlet property="eddBtn" destination="GZC-Pk-RDO" id="RBh-eM-r8E"/>
+                        <outlet property="eddLbl" destination="wUo-uD-zkf" id="exX-gY-5la"/>
                         <outlet property="languageSwicher" destination="7il-Jr-XKq" id="rRM-Ct-nqm"/>
                         <outlet property="lmpBtn" destination="rAl-6T-dWQ" id="lRL-Wa-a3V"/>
+                        <outlet property="lmpLbl" destination="x00-1I-tT3" id="mOU-6O-HlS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -145,7 +219,7 @@
                                     <fragment content="計算の基準日：">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="15" name="HiraginoSans-W3"/>
+                                            <font key="NSFont" size="16" name="HiraginoSans-W3"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -153,29 +227,29 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Moz-SL-PjD">
-                                <rect key="frame" x="48" y="264.5" width="272" height="15"/>
+                                <rect key="frame" x="48" y="264.5" width="272" height="19"/>
                                 <attributedString key="attributedText">
                                     <fragment content="分娩予定日（修正なし）：">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="15" name="HiraginoSans-W3"/>
+                                            <font key="NSFont" size="19" name="HiraginoSans-W3"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPp-KY-hYQ">
-                                <rect key="frame" x="119.5" y="327.5" width="136" height="1"/>
+                                <rect key="frame" x="119.5" y="331.5" width="136" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="8Q1-Lx-8hP"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbw-Gc-YBe">
-                                <rect key="frame" x="24" y="360.5" width="327" height="136"/>
+                                <rect key="frame" x="24" y="364.5" width="327" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4M-z7-FfS">
-                                        <rect key="frame" x="100" y="8" width="128" height="24"/>
+                                        <rect key="frame" x="75.5" y="8" width="176" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="m0Y-Tq-b3s"/>
                                         </constraints>
@@ -183,7 +257,7 @@
                                             <fragment content="基準日の妊娠週数">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="16" name="HiraginoSans-W3"/>
+                                                    <font key="NSFont" size="22" name="HiraginoSans-W3"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -198,7 +272,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iGy-XF-U4I">
-                                        <rect key="frame" x="109" y="94" width="51" height="27"/>
+                                        <rect key="frame" x="109" y="92.5" width="51" height="30.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="51" id="bB1-Kv-clp"/>
                                         </constraints>
@@ -206,7 +280,7 @@
                                             <fragment content="0">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="23"/>
+                                                    <font key="NSFont" size="26" name=".SFNSDisplay"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -230,13 +304,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsA-yR-uce">
-                                        <rect key="frame" x="162" y="46" width="3" height="21"/>
+                                        <rect key="frame" x="162" y="43" width="3" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXA-oT-Nlk">
-                                        <rect key="frame" x="140" y="44.5" width="20" height="24"/>
+                                        <rect key="frame" x="140" y="41.5" width="20" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Cll-gY-ABh"/>
                                         </constraints>
@@ -252,12 +326,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBA-tV-24b">
-                                        <rect key="frame" x="167" y="42.5" width="13" height="28"/>
+                                        <rect key="frame" x="167" y="39.5" width="14" height="28"/>
                                         <attributedString key="attributedText">
                                             <fragment content="0">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="23" name=".SFNSDisplay"/>
+                                                    <font key="NSFont" size="26" name=".SFNSDisplay"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -265,7 +339,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhS-uw-4P5">
-                                        <rect key="frame" x="188" y="44.5" width="21" height="24"/>
+                                        <rect key="frame" x="189" y="41.5" width="21" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="qDU-25-eUj"/>
                                         </constraints>
@@ -281,12 +355,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5R-ad-Rr1">
-                                        <rect key="frame" x="119" y="43" width="13" height="27"/>
+                                        <rect key="frame" x="118" y="38" width="14" height="30.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="0">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="23" name=".SFNSDisplay"/>
+                                                    <font key="NSFont" size="26" name=".SFNSDisplay"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -331,7 +405,7 @@
                                     <fragment content="最終月経開始日：">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="15" name="HiraginoSans-W3"/>
+                                            <font key="NSFont" size="16" name="HiraginoSans-W3"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -360,8 +434,8 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQd-q2-yhB">
-                                <rect key="frame" x="159.5" y="568.5" width="55" height="30"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
+                                <rect key="frame" x="154" y="572.5" width="66" height="34"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="22"/>
                                 <state key="normal" title="初期化">
                                     <color key="titleColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -370,7 +444,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DEb-yI-iLs">
-                                <rect key="frame" x="119.5" y="295.5" width="136" height="24"/>
+                                <rect key="frame" x="119.5" y="299.5" width="136" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Kp8-1U-fdW"/>
                                     <constraint firstAttribute="width" constant="136" id="VzU-BR-nAH"/>
@@ -449,7 +523,7 @@
                                     <fragment content="計算の基準日：">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="15" name="HiraginoSans-W3"/>
+                                            <font key="NSFont" size="17" name="HiraginoSans-W3"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -460,7 +534,7 @@
                                 <rect key="frame" x="37" y="249.5" width="300" height="136"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yet-If-GXV">
-                                        <rect key="frame" x="86" y="8" width="128" height="24"/>
+                                        <rect key="frame" x="62" y="8" width="176" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Cw5-zM-AG5"/>
                                         </constraints>
@@ -468,7 +542,7 @@
                                             <fragment content="基準日の妊娠週数">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <font key="NSFont" size="16" name="HiraginoSans-W3"/>
+                                                    <font key="NSFont" size="22" name="HiraginoSans-W3"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -476,12 +550,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0N-Ee-GiW">
-                                        <rect key="frame" x="103" y="43" width="13" height="27"/>
+                                        <rect key="frame" x="102" y="38" width="14" height="30.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="0">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="23" name=".SFNSDisplay"/>
+                                                    <font key="NSFont" size="26" name=".SFNSDisplay"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -496,7 +570,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMj-cg-Kch">
-                                        <rect key="frame" x="124" y="45" width="20" height="24"/>
+                                        <rect key="frame" x="124" y="42" width="20" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="yfJ-XQ-eFC"/>
                                         </constraints>
@@ -512,7 +586,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNh-W5-uq3">
-                                        <rect key="frame" x="177" y="45" width="21" height="24"/>
+                                        <rect key="frame" x="178" y="42" width="21" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="JM0-G1-EfD"/>
                                         </constraints>
@@ -528,18 +602,18 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3y-ox-yta">
-                                        <rect key="frame" x="146" y="45" width="8" height="22"/>
+                                        <rect key="frame" x="146" y="42" width="8" height="22"/>
                                         <fontDescription key="fontDescription" name=".HiraKakuInterface-W3" family=".Hiragino Kaku Gothic Interface" pointSize="23"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pi9-0u-4gK">
-                                        <rect key="frame" x="131" y="94" width="13" height="27"/>
+                                        <rect key="frame" x="130" y="92.5" width="14" height="30.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="0">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" metaFont="system" size="23"/>
+                                                    <font key="NSFont" size="26" name=".SFNSDisplay"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -563,12 +637,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge3-Xj-p7M">
-                                        <rect key="frame" x="156" y="43" width="13" height="27"/>
+                                        <rect key="frame" x="156" y="38.5" width="14" height="30.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="0">
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="23" name=".SFNSDisplay"/>
+                                                    <font key="NSFont" size="26" name=".SFNSDisplay"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -636,7 +710,7 @@
                                     <fragment content="分娩予定日：">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="15" name="HiraginoSans-W3"/>
+                                            <font key="NSFont" size="18" name="HiraginoSans-W3"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -644,8 +718,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM0-DR-Akn">
-                                <rect key="frame" x="159.5" y="457.5" width="55" height="30"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
+                                <rect key="frame" x="155.5" y="457.5" width="63" height="33"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="21"/>
                                 <state key="normal" title="初期化">
                                     <color key="titleColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -692,8 +766,251 @@
             </objects>
             <point key="canvasLocation" x="588" y="816.34182908545733"/>
         </scene>
+        <!--Bmi View Controller-->
+        <scene sceneID="ap4-wd-i7X">
+            <objects>
+                <viewController id="IN4-Pg-XSa" customClass="BmiViewController" customModule="GestationalAgeCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Hr-NK-zO4"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZCn-JI-Le7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d0P-Gk-azX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTY-OJ-dxH">
+                                <rect key="frame" x="24" y="96" width="343" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="bDy-qw-N6J"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="身長・体重を入力してください">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="16" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmX-dZ-19t">
+                                <rect key="frame" x="48" y="168" width="57" height="19"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="身長：">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-gz-11e">
+                                <rect key="frame" x="48" y="219" width="57" height="19"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="体重：">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txj-RH-j6c">
+                                <rect key="frame" x="113" y="162" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="BbS-Tt-dIL"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IN4-Pg-XSa" id="6cO-66-a2M"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rju-ud-uA2">
+                                <rect key="frame" x="177" y="168" width="5" height="19"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=".">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RrP-KM-YRI">
+                                <rect key="frame" x="190" y="162" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="kDg-6z-pNn"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IN4-Pg-XSa" id="mxy-ah-s8G"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ja-vV-xMZ">
+                                <rect key="frame" x="254" y="168" width="29" height="19"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="cm">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5s-gB-4DR">
+                                <rect key="frame" x="113" y="213" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="WOP-s0-1bv"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IN4-Pg-XSa" id="Wu4-ej-ebv"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99k-q4-Whh">
+                                <rect key="frame" x="177" y="219" width="5" height="19"/>
+                                <attributedString key="attributedText">
+                                    <fragment content=".">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jvD-mf-3G6">
+                                <rect key="frame" x="190" y="213" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="ytg-oo-tHX"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="IN4-Pg-XSa" id="v6T-4r-xEi"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGU-4O-aqk">
+                                <rect key="frame" x="254" y="216" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="w1B-tY-ulv"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="kg">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zod-Tc-ckA">
+                                <rect key="frame" x="48" y="299" width="99" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="eaB-jc-np0"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="体格指数 =">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="19" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UcR-fW-zbY">
+                                <rect key="frame" x="155" y="331" width="148" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="5Xy-NK-EPS"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAz-Mz-rgj">
+                                <rect key="frame" x="155" y="308.5" width="148" height="0.0"/>
+                                <attributedString key="attributedText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RM1-LP-NoH">
+                                <rect key="frame" x="156" y="460" width="63" height="33"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="21"/>
+                                <state key="normal" title="初期化">
+                                    <color key="titleColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearBtnTapped:" destination="IN4-Pg-XSa" eventType="touchUpInside" id="NaT-gF-HTY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fAz-Mz-rgj" firstAttribute="width" secondItem="UcR-fW-zbY" secondAttribute="width" id="0LH-Tg-sEQ"/>
+                            <constraint firstItem="rju-ud-uA2" firstAttribute="centerY" secondItem="txj-RH-j6c" secondAttribute="centerY" id="0j2-xd-Bc6"/>
+                            <constraint firstItem="txj-RH-j6c" firstAttribute="centerY" secondItem="gmX-dZ-19t" secondAttribute="centerY" id="0ue-bT-sC5"/>
+                            <constraint firstItem="FTY-OJ-dxH" firstAttribute="top" secondItem="0Hr-NK-zO4" secondAttribute="bottom" constant="32" id="3TP-Uk-Try"/>
+                            <constraint firstItem="FTY-OJ-dxH" firstAttribute="leading" secondItem="d0P-Gk-azX" secondAttribute="leadingMargin" constant="8" id="5gv-Eg-BWf"/>
+                            <constraint firstItem="NGU-4O-aqk" firstAttribute="centerY" secondItem="jvD-mf-3G6" secondAttribute="centerY" id="8VK-fY-Nbe"/>
+                            <constraint firstItem="RM1-LP-NoH" firstAttribute="top" secondItem="UcR-fW-zbY" secondAttribute="bottom" constant="128" id="AYK-QP-btu"/>
+                            <constraint firstItem="gmX-dZ-19t" firstAttribute="leading" secondItem="d0P-Gk-azX" secondAttribute="leadingMargin" constant="32" id="HhB-RO-lWO"/>
+                            <constraint firstItem="b5s-gB-4DR" firstAttribute="leading" secondItem="txj-RH-j6c" secondAttribute="leading" id="Hr8-Xw-Cbi"/>
+                            <constraint firstItem="FTY-OJ-dxH" firstAttribute="trailing" secondItem="d0P-Gk-azX" secondAttribute="trailingMargin" constant="8" id="JuO-ov-Gs3"/>
+                            <constraint firstItem="fAz-Mz-rgj" firstAttribute="trailing" secondItem="UcR-fW-zbY" secondAttribute="trailing" id="KVR-4b-gKO"/>
+                            <constraint firstItem="RrP-KM-YRI" firstAttribute="leading" secondItem="rju-ud-uA2" secondAttribute="trailing" constant="8" id="KaE-bg-DXb"/>
+                            <constraint firstItem="UcR-fW-zbY" firstAttribute="leading" secondItem="Zod-Tc-ckA" secondAttribute="trailing" constant="8" id="MEy-8h-qZW"/>
+                            <constraint firstItem="Seb-gz-11e" firstAttribute="leading" secondItem="gmX-dZ-19t" secondAttribute="leading" id="N4j-86-jEc"/>
+                            <constraint firstItem="NGU-4O-aqk" firstAttribute="leading" secondItem="0Ja-vV-xMZ" secondAttribute="leading" id="NYJ-WN-ZN8"/>
+                            <constraint firstItem="99k-q4-Whh" firstAttribute="centerY" secondItem="b5s-gB-4DR" secondAttribute="centerY" id="O2E-zl-9nu"/>
+                            <constraint firstItem="UcR-fW-zbY" firstAttribute="top" secondItem="jvD-mf-3G6" secondAttribute="bottom" constant="88" id="P3T-y7-TjI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UcR-fW-zbY" secondAttribute="trailing" constant="56" id="Pu7-7r-2Ce"/>
+                            <constraint firstItem="RM1-LP-NoH" firstAttribute="centerX" secondItem="d0P-Gk-azX" secondAttribute="centerX" id="Vr8-eB-mDw"/>
+                            <constraint firstItem="RrP-KM-YRI" firstAttribute="centerY" secondItem="txj-RH-j6c" secondAttribute="centerY" id="Wof-zE-9Sx"/>
+                            <constraint firstItem="0Ja-vV-xMZ" firstAttribute="leading" secondItem="RrP-KM-YRI" secondAttribute="trailing" constant="8" id="XJY-uJ-RcB"/>
+                            <constraint firstItem="rju-ud-uA2" firstAttribute="leading" secondItem="txj-RH-j6c" secondAttribute="trailing" constant="8" id="eJr-ST-Kvc"/>
+                            <constraint firstItem="99k-q4-Whh" firstAttribute="leading" secondItem="b5s-gB-4DR" secondAttribute="trailing" constant="8" id="f5o-fP-UV1"/>
+                            <constraint firstItem="Zod-Tc-ckA" firstAttribute="top" secondItem="b5s-gB-4DR" secondAttribute="bottom" constant="56" id="fxY-JZ-Kr4"/>
+                            <constraint firstItem="txj-RH-j6c" firstAttribute="leading" secondItem="gmX-dZ-19t" secondAttribute="trailing" constant="8" id="gJp-es-96I"/>
+                            <constraint firstItem="b5s-gB-4DR" firstAttribute="centerY" secondItem="Seb-gz-11e" secondAttribute="centerY" id="hff-dK-cDa"/>
+                            <constraint firstItem="gmX-dZ-19t" firstAttribute="top" secondItem="FTY-OJ-dxH" secondAttribute="bottom" constant="16" id="icG-r2-ItL"/>
+                            <constraint firstItem="0Ja-vV-xMZ" firstAttribute="centerY" secondItem="RrP-KM-YRI" secondAttribute="centerY" id="leD-nx-uFh"/>
+                            <constraint firstItem="jvD-mf-3G6" firstAttribute="centerY" secondItem="b5s-gB-4DR" secondAttribute="centerY" id="mFo-2R-5Y7"/>
+                            <constraint firstItem="jvD-mf-3G6" firstAttribute="leading" secondItem="99k-q4-Whh" secondAttribute="trailing" constant="8" id="tZi-Cz-aI1"/>
+                            <constraint firstItem="Seb-gz-11e" firstAttribute="top" secondItem="gmX-dZ-19t" secondAttribute="bottom" constant="32" id="xgp-3f-ZaY"/>
+                            <constraint firstItem="Zod-Tc-ckA" firstAttribute="leading" secondItem="Seb-gz-11e" secondAttribute="leading" id="z1g-Kb-CSp"/>
+                            <constraint firstItem="fAz-Mz-rgj" firstAttribute="centerY" secondItem="Zod-Tc-ckA" secondAttribute="centerY" id="zKa-bX-nYP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bmiResultLbl" destination="fAz-Mz-rgj" id="0Oa-rF-230"/>
+                        <outlet property="clearBtn" destination="RM1-LP-NoH" id="FVS-d8-9RO"/>
+                        <outlet property="heightAfterDecimal" destination="RrP-KM-YRI" id="wuQ-r2-zLJ"/>
+                        <outlet property="heightBeforDecimal" destination="txj-RH-j6c" id="2bu-6c-Xyd"/>
+                        <outlet property="weightAfterDecimal" destination="jvD-mf-3G6" id="Mtu-fl-RYZ"/>
+                        <outlet property="weightBeforDecimal" destination="b5s-gB-4DR" id="OCp-HJ-bSK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g1m-cy-qpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="588" y="1495.5022488755624"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="btn_icon_circle" width="16" height="16"/>
-    </resources>
 </document>

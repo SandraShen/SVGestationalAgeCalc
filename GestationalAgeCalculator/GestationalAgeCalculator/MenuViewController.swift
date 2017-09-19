@@ -14,6 +14,8 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var lmpBtn: UIButton!    // 最終月経開始日から計算
     @IBOutlet weak var eddBtn: UIButton!    // 分娩予定日から計算
+    @IBOutlet weak var lmpLbl: UILabel!
+    @IBOutlet weak var eddLbl: UILabel!
     
     // MARK: member variables
     private var selectedLanguage: String {
@@ -80,8 +82,10 @@ class MenuViewController: UIViewController {
         self.navigationItem.title = navigationTitle
         let myBackButton = UIBarButtonItem(title: backBtnTile, style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = myBackButton
-        self.lmpBtn.setTitle(lmpBtnTitle, for: .normal)
-        self.eddBtn.setTitle(eddBtnTitle, for: .normal)
+//        self.lmpBtn.setTitle(lmpBtnTitle, for: .normal)
+//        self.eddBtn.setTitle(eddBtnTitle, for: .normal)
+        self.lmpLbl.text = lmpBtnTitle
+        self.eddLbl.text = eddBtnTitle
     }
 }
 
