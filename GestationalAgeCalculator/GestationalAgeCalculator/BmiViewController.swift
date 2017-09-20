@@ -24,9 +24,9 @@ class BmiViewController: BaseViewController {
     
     // MARK: member variables
     var heightBefor = ""
-    var heightAfter = ""
+    var heightAfter = "0"
     var weightBefore = ""
-    var weightAfter = ""
+    var weightAfter = "0"
     
     var height: Double!
     var weight: Double!
@@ -48,6 +48,11 @@ class BmiViewController: BaseViewController {
         self.weightBeforDecimal.text = ""
         self.weightAfterDecimal.text = ""
         self.bmiResultLbl.text = ""
+        
+        self.heightBefor = ""
+        self.heightAfter = "0"
+        self.weightBefore = ""
+        self.weightAfter = "0"
     }
     
     // MARK: methods
@@ -57,7 +62,7 @@ class BmiViewController: BaseViewController {
         if transferHeight() && transferWeight() {
             let res = self.weight / pow(self.height * 0.01, 2)
             let roundRes = round(res * 100) / 100
-            self.bmiResultLbl.text = roundRes.description
+            self.bmiResultLbl.text = String(format: "%.2f", roundRes)
         }
     }
     
@@ -67,7 +72,7 @@ class BmiViewController: BaseViewController {
             self.heightBeforDecimal.resignFirstResponder()
         }
         if self.heightAfterDecimal.isFirstResponder {
-            self.heightAfter = self.heightAfterDecimal.text ?? ""
+            self.heightAfter = self.heightAfterDecimal.text ?? "0"
             self.heightAfterDecimal.resignFirstResponder()
         }
         if self.weightBeforDecimal.isFirstResponder {
@@ -75,7 +80,7 @@ class BmiViewController: BaseViewController {
             self.weightBeforDecimal.resignFirstResponder()
         }
         if self.weightAfterDecimal.isFirstResponder {
-            self.weightAfter = self.weightAfterDecimal.text ?? ""
+            self.weightAfter = self.weightAfterDecimal.text ?? "0"
             self.weightAfterDecimal.resignFirstResponder()
         }
         self.calc()
@@ -97,5 +102,23 @@ class BmiViewController: BaseViewController {
             return true
         }
         return false
+    }
+}
+
+extension BmiViewController: UITextFieldDelegate {
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 0:
+            self.heightBefor = self.heightBeforDecimal.text ?? ""
+        case 1:
+            self.heightAfter = self.heightAfterDecimal.text ?? ""
+        case 2:
+            self.weightBefore = self.weightBeforDecimal.text ?? ""
+        case 3:
+            self.weightAfter = self.weightAfterDecimal.text ?? ""
+        default:
+            break
+        }
+        return true
     }
 }
