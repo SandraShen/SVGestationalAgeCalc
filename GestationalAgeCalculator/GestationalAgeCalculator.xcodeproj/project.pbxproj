@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C68C4C31F738BAF003DCE6E /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C68C4C21F738BAF003DCE6E /* QuizViewController.swift */; };
 		6CECDCCC1F70BA8600C45085 /* BmiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CECDCCB1F70BA8600C45085 /* BmiViewController.swift */; };
 		B62C20A51F6CC58300673BD1 /* LmpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C20A41F6CC58300673BD1 /* LmpViewController.swift */; };
 		B62C20A71F6CC5CD00673BD1 /* EddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62C20A61F6CC5CD00673BD1 /* EddViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C68C4C21F738BAF003DCE6E /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		6CECDCCB1F70BA8600C45085 /* BmiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BmiViewController.swift; sourceTree = "<group>"; };
 		B62C20A41F6CC58300673BD1 /* LmpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LmpViewController.swift; sourceTree = "<group>"; };
 		B62C20A61F6CC5CD00673BD1 /* EddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EddViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				B62C20A41F6CC58300673BD1 /* LmpViewController.swift */,
 				B62C20A61F6CC5CD00673BD1 /* EddViewController.swift */,
 				6CECDCCB1F70BA8600C45085 /* BmiViewController.swift */,
+				6C68C4C21F738BAF003DCE6E /* QuizViewController.swift */,
 				B657F28E1F6407460099A52F /* Main.storyboard */,
 				B657F2911F6407460099A52F /* Assets.xcassets */,
 				B657F2931F6407460099A52F /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B656B18F1F6CEED800B8EF5C /* BaseViewController.swift in Sources */,
+				6C68C4C31F738BAF003DCE6E /* QuizViewController.swift in Sources */,
 				B62C20A51F6CC58300673BD1 /* LmpViewController.swift in Sources */,
 				B657F28D1F6407460099A52F /* MenuViewController.swift in Sources */,
 				6CECDCCC1F70BA8600C45085 /* BmiViewController.swift in Sources */,
