@@ -40,6 +40,23 @@ class BaseViewController: UIViewController {
         return doneToolbar
     }
     
+    func makeDoneMinusButtonToPicker() -> UIToolbar {
+        let doneToolbar = self.makeDoneButtonToPicker()
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let minus = UIBarButtonItem(title: "ー", style: .plain, target: self, action: Selector(("toggleMinus")))
+        let done = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: Selector(("doneButtonAction")))
+        
+        let items = NSMutableArray()
+        items.add(minus)
+        items.add(flexSpace)
+        items.add(done)
+        
+        doneToolbar.items = items as? [UIBarButtonItem]
+        doneToolbar.sizeToFit()
+        return doneToolbar
+    }
+    
     // 本日の年月日を取得
     func getToday() -> String {
         self.defaultDate = cal.startOfDay(for: Date())
@@ -74,10 +91,10 @@ class BaseViewController: UIViewController {
         let week = day / 7
         let remainder = day % 7
         print("**** 週: \(week)")
-        print("**** 日: \(day)")
-        print("**** 日目: \(remainder)")
+        print("**** 日目: \(day)")
+        print("**** 日: \(remainder)")
         
-        return (week.description, remainder.description, day.description)
+        return (week.description, remainder.description, (day + 1).description)
     }
     
     // 分娩予定から基準日までの妊娠週数・日数を逆算
@@ -100,9 +117,9 @@ class BaseViewController: UIViewController {
         let week = day / 7
         let remainder = day % 7
         print("**** 週: \(week)")
-        print("**** 日: \(day)")
-        print("**** 日目: \(remainder)")
+        print("**** 日目: \(day)")
+        print("**** 日: \(remainder)")
         
-        return (week.description, remainder.description, day.description)
+        return (week.description, remainder.description, (day + 1).description)
     }
 }
