@@ -43,11 +43,11 @@ class LmpViewController: BaseViewController {
         self.lmpInput.inputAccessoryView = self.makeDoneButtonToPicker()
         self.baseDateInput.inputAccessoryView = self.makeDoneButtonToPicker()
         
-        self.lmpInput.text = self.defaultDate
-        self.baseDateInput.text = self.defaultDate
+        self.lmpInput.text = self.defaultDateString
+        self.baseDateInput.text = self.defaultDateString
         
-        self.lmpDate = Date()
-        self.baseDate = Date()
+        self.lmpDate = self.defaultDate
+        self.baseDate = self.defaultDate
         
         // datepickerを生成
         self.datePicker = UIDatePicker()
@@ -59,10 +59,10 @@ class LmpViewController: BaseViewController {
     // MARK: IBAction
     // 入力データ初期化
     @IBAction func resetBtnTapped(_ sender: UIButton) {
-        self.lmpDate = Date()
-        self.baseDate = Date()
-        self.baseDateInput.text = self.defaultDate
-        self.lmpInput.text = self.defaultDate
+        self.lmpDate = self.defaultDate
+        self.baseDate = self.defaultDate
+        self.baseDateInput.text = self.defaultDateString
+        self.lmpInput.text = self.defaultDateString
         self.expectedDateOfDeliveryLbl.text = ""
         self.getaionalWeekLbl.text = "0"
         self.remainderDaysLbl.text = "0"
@@ -149,7 +149,6 @@ class LmpViewController: BaseViewController {
 extension LmpViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.inputView = self.datePicker
-        self.datePicker.setDate(Date(), animated: true)
         return true
     }
 }

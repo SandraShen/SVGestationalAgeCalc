@@ -40,11 +40,11 @@ class EddViewController: BaseViewController {
         self.eddInput.inputAccessoryView = self.makeDoneButtonToPicker()
         self.baseDateInput.inputAccessoryView = self.makeDoneButtonToPicker()
         
-        self.eddInput.text = self.defaultDate
-        self.baseDateInput.text = self.defaultDate
+        self.eddInput.text = self.defaultDateString
+        self.baseDateInput.text = self.defaultDateString
         
-        self.eddDate = Date()
-        self.baseDate = Date()
+        self.eddDate = self.defaultDate
+        self.baseDate = self.defaultDate
         
         // datepickerを生成
         self.datePicker = UIDatePicker()
@@ -56,10 +56,10 @@ class EddViewController: BaseViewController {
     // MARK: IBAction
     // 入力データ初期化
     @IBAction func resetBtnTapped(_ sender: UIButton) {
-        self.baseDate = Date()
-        self.eddDate = Date()
-        self.baseDateInput.text = self.defaultDate
-        self.eddInput.text = self.defaultDate
+        self.baseDate = self.defaultDate
+        self.eddDate = self.defaultDate
+        self.baseDateInput.text = self.defaultDateString
+        self.eddInput.text = self.defaultDateString
         self.getationalWeek.text = "0"
         self.remainderDays.text = "0"
         self.totalGetationalDays.text = "0"
@@ -139,7 +139,6 @@ class EddViewController: BaseViewController {
 extension EddViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         textField.inputView = self.datePicker
-        self.datePicker.setDate(Date(), animated: true)
         return true
     }
 }
