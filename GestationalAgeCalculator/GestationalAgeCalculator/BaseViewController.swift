@@ -12,7 +12,10 @@ class BaseViewController: UIViewController {
     // MARK: mamber variables
     // 現在の言語設定
     var language: String {
-        return UserDefaults.standard.string(forKey: "language")!
+        if let value = UserDefaults.standard.string(forKey: "language") {
+            return value
+        }
+        return "jpn"
     }
     
     var defaultDateString: String {

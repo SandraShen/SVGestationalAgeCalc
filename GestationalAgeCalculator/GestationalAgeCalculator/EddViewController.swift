@@ -22,11 +22,12 @@ class EddViewController: BaseViewController {
     @IBOutlet weak var remainderDays: UILabel!      // 余り日数
     @IBOutlet weak var dayLbl: UILabel!
     @IBOutlet weak var totalGetationalDays: UILabel!// トータル妊娠日数
-    @IBOutlet weak var totalDaysLbl: UILabel!
     
     @IBOutlet weak var resetBtn: UIButton!  // 初期化ボタン
     
     // MARK: member variables
+    var isJpn = false
+    var totalDaysLbl = ""
     var datePicker: UIDatePicker!
     var eddDate: Date!
     var baseDate: Date!
@@ -62,7 +63,11 @@ class EddViewController: BaseViewController {
         self.eddInput.text = self.defaultDateString
         self.getationalWeek.text = "0"
         self.remainderDays.text = "0"
-        self.totalGetationalDays.text = "0"
+        if self.isJpn {
+            self.totalGetationalDays.text = "0" + self.totalDaysLbl
+        } else {
+            self.totalGetationalDays.text = self.totalDaysLbl + "0"
+        }
     }
     
     // MARK: methods
@@ -72,34 +77,35 @@ class EddViewController: BaseViewController {
         var ageTitle = ""
         var weekLbl = ""
         var daysLbl = ""
-        var totalDaysLbl = ""
         var reset = ""
         
         switch self.language {
         case "jpn":
+            self.isJpn = true
+            
             eddInputTitle = "分娩予定日："
             baseDateTitle = "計算の基準日："
             ageTitle = "基準日の妊娠週数"
             weekLbl = "週"
             daysLbl = "日"
-            totalDaysLbl = "日目"
+            self.totalDaysLbl = "　日目"
             reset = "初期化"
         case "eng":
             eddInputTitle = "Expected Date of Delivery"
             baseDateTitle = "Reference Day"
             
             ageTitle = "Getational Age on the Reference Day"
-            weekLbl = "week"
-            daysLbl = "days"
-            totalDaysLbl = "days"
+            weekLbl = "week(s)"
+            daysLbl = "day(s)"
+            self.totalDaysLbl = "day "
             reset = "Reset"
         case "fre":
             eddInputTitle = "La date présumée de votre accouchement"
             baseDateTitle = "Date de référence"
             ageTitle = "Âge gestationnel"
-            weekLbl = "Semaine"
-            daysLbl = "jours"
-            totalDaysLbl = "jours"
+            weekLbl = "semaine(s)"
+            daysLbl = "jour(s)"
+            self.totalDaysLbl = "jour "
             reset = "réinitialiser"
         default:
             break
@@ -109,7 +115,11 @@ class EddViewController: BaseViewController {
         self.getationalAgeTitle.text = ageTitle
         self.weekLbl.text = weekLbl
         self.dayLbl.text = daysLbl
-        self.totalDaysLbl.text = totalDaysLbl
+        if self.isJpn {
+            self.totalGetationalDays.text = self.totalGetationalDays.text! + self.totalDaysLbl
+        } else {
+            self.totalGetationalDays.text = self.totalDaysLbl + self.totalGetationalDays.text!
+        }
         self.resetBtn.setTitle(reset, for: .normal)
     }
     
@@ -120,7 +130,11 @@ class EddViewController: BaseViewController {
         let (week, remainder, day) = self.calcGetationalAgeFromEdd(fromDate: self.eddDate, toDate: self.baseDate)
         self.getationalWeek.text = week
         self.remainderDays.text = remainder
-        self.totalGetationalDays.text = day
+        if self.isJpn {
+            self.totalGetationalDays.text = day + self.totalDaysLbl
+        } else {
+            self.totalGetationalDays.text = self.totalDaysLbl + day
+        }
     }
     
     // datepicker制御
