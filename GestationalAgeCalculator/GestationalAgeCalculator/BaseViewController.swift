@@ -125,4 +125,27 @@ class BaseViewController: UIViewController {
         
         return (week.description, remainder.description, (day + 1).description)
     }
+    
+    // 妊娠週数と基準日から分娩予定を計算
+    // - parameter -
+    // -- weeks:    妊娠週数
+    // -- baseDate:   基準日
+    func calcEddFromGestationalWeeks(weeks: Int, baseDate: Date) -> String {
+        // 計算に使用される日付の時刻を0時0分0秒に指定
+        let base = cal.startOfDay(for: baseDate)
+        
+        // 週数が50超える場合はretrun
+        guard weeks <= 50 else {
+            return "****"
+        }
+        // 基準日から妊娠週数を減算
+        let week: Int = 0 - (weeks * 7)
+        let res = cal.date(byAdding: .day, value: week, to: base)
+        guard let startDate = res else {
+            return "****"
+        }
+        
+        let edd = self.calcEddFromLmp(fromDate: startDate)
+        return edd
+    }
 }

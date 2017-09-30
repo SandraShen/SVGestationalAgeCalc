@@ -19,6 +19,7 @@
 		B657F2951F6407460099A52F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B657F2931F6407460099A52F /* LaunchScreen.storyboard */; };
 		B657F2A01F6407460099A52F /* GestationalAgeCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657F29F1F6407460099A52F /* GestationalAgeCalculatorTests.swift */; };
 		B657F2AB1F6407460099A52F /* GestationalAgeCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B657F2AA1F6407460099A52F /* GestationalAgeCalculatorUITests.swift */; };
+		B6F35BE91F7FD29E00064109 /* GestationalWeekViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F35BE81F7FD29E00064109 /* GestationalWeekViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B657F2A61F6407460099A52F /* GestationalAgeCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GestationalAgeCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B657F2AA1F6407460099A52F /* GestationalAgeCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestationalAgeCalculatorUITests.swift; sourceTree = "<group>"; };
 		B657F2AC1F6407460099A52F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6F35BE81F7FD29E00064109 /* GestationalWeekViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestationalWeekViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				B657F2911F6407460099A52F /* Assets.xcassets */,
 				B657F2931F6407460099A52F /* LaunchScreen.storyboard */,
 				B657F2961F6407460099A52F /* Info.plist */,
+				B6F35BE81F7FD29E00064109 /* GestationalWeekViewController.swift */,
 			);
 			path = GestationalAgeCalculator;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				6C68C4C31F738BAF003DCE6E /* QuizViewController.swift in Sources */,
 				B62C20A51F6CC58300673BD1 /* LmpViewController.swift in Sources */,
 				B657F28D1F6407460099A52F /* MenuViewController.swift in Sources */,
+				B6F35BE91F7FD29E00064109 /* GestationalWeekViewController.swift in Sources */,
 				6CECDCCC1F70BA8600C45085 /* BmiViewController.swift in Sources */,
 				B62C20A71F6CC5CD00673BD1 /* EddViewController.swift in Sources */,
 				B657F28B1F6407460099A52F /* AppDelegate.swift in Sources */,

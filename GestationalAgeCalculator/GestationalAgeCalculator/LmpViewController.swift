@@ -25,7 +25,6 @@ class LmpViewController: BaseViewController {
     @IBOutlet weak var remainderDaysLbl: UILabel!   // 余り日数
     @IBOutlet weak var daysLbl: UILabel!
     @IBOutlet weak var totalGetationalDaysLbl: UILabel! //　トータル妊娠日数
-//    @IBOutlet weak var totalDaysLbl: UILabel!
     
     @IBOutlet weak var resetBtn: UIButton!  // 初期化ボタン
     
