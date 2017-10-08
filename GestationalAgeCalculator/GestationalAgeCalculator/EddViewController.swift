@@ -28,7 +28,8 @@ class EddViewController: BaseViewController {
     // MARK: member variables
     var isJpn = false
     var totalDaysLbl = ""
-    var datePicker: UIDatePicker!
+    var eddDatePicker: UIDatePicker!    // 分娩予定日datepicker
+    var datePicker: UIDatePicker!       // 基準日datepicker
     var eddDate: Date!
     var baseDate: Date!
     
@@ -52,6 +53,11 @@ class EddViewController: BaseViewController {
         self.datePicker.datePickerMode = .date
         self.datePicker.calendar = Calendar(identifier: .gregorian)
         self.datePicker.addTarget(self, action: #selector(self.handleDatePicker), for: .valueChanged)
+        
+        self.eddDatePicker = UIDatePicker()
+        self.eddDatePicker.datePickerMode = .date
+        self.eddDatePicker.calendar = Calendar(identifier: .gregorian)
+        self.eddDatePicker.addTarget(self, action: #selector(self.handleDatePicker), for: .valueChanged)
     }
     
     // MARK: IBAction
@@ -140,8 +146,8 @@ class EddViewController: BaseViewController {
     // datepicker制御
     func handleDatePicker(){
         if self.eddInput.isFirstResponder {
-            self.eddDate = self.datePicker.date
-            self.eddInput.text = self.formatteDateForPicker(date: self.datePicker.date)
+            self.eddDate = self.eddDatePicker.date
+            self.eddInput.text = self.formatteDateForPicker(date: self.eddDatePicker.date)
         }
         if self.baseDateInput.isFirstResponder {
             self.baseDate = self.datePicker.date
@@ -152,7 +158,11 @@ class EddViewController: BaseViewController {
 
 extension EddViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textField.inputView = self.datePicker
+        if textField.tag == 0 {
+            textField.inputView = self.eddDatePicker
+        } else {
+            textField.inputView = self.datePicker
+        }
         return true
     }
 }

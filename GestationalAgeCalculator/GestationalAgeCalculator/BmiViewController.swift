@@ -55,6 +55,10 @@ class BmiViewController: BaseViewController {
         self.weightAfter = "0"
     }
     
+    @IBAction func calcBtnTapped(_ sender: UIButton) {
+        self.calc()
+    }
+    
     // MARK: methods
     // BMI計算
     private func calc() {
@@ -83,7 +87,6 @@ class BmiViewController: BaseViewController {
             self.weightAfter = self.weightAfterDecimal.text ?? "0"
             self.weightAfterDecimal.resignFirstResponder()
         }
-        self.calc()
     }
     
     private func transferHeight() -> Bool {
