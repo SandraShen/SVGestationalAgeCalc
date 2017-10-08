@@ -169,7 +169,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="1hk-J8-2TS"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="本日の妊娠週数から 分娩予定を計算">
+                                    <fragment content="本日の妊娠週数から 分娩予定日を計算">
                                         <attributes>
                                             <color key="NSColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="21" name="HiraginoSans-W4"/>
@@ -1388,9 +1388,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aSh-fR-gwt">
-                                <rect key="frame" x="192" y="124.5" width="128" height="30"/>
+                                <rect key="frame" x="192" y="125" width="40" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="128" id="0Yz-dm-eRY"/>
+                                    <constraint firstAttribute="width" constant="40" id="mk7-qR-rBB"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1401,6 +1401,9 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rd5-bj-jNY">
                                 <rect key="frame" x="192" y="194.5" width="128" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="yUB-FR-jnx"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1428,20 +1431,70 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NwF-qW-1Uv">
+                                <rect key="frame" x="236" y="112" width="16" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="fGE-bI-MmJ"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="週">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="16" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2fZ-rc-t1s">
+                                <rect key="frame" x="260" y="125" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ttC-3h-8ZQ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vj3-jN-sEV" id="aq7-U3-KBz"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NNS-al-VEF">
+                                <rect key="frame" x="304" y="112" width="16" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="tK9-g0-Ux0"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="日">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="16" name="HiraginoSans-W3"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l7N-od-4EN" firstAttribute="leading" secondItem="iOI-cd-rev" secondAttribute="leadingMargin" constant="32" id="1wZ-th-b3r"/>
+                            <constraint firstItem="2fZ-rc-t1s" firstAttribute="centerY" secondItem="aSh-fR-gwt" secondAttribute="centerY" id="8N3-eO-LKc"/>
                             <constraint firstItem="5eN-dZ-7GX" firstAttribute="leading" secondItem="Gtx-Ne-Vxg" secondAttribute="leading" id="9aT-Lb-VZ5"/>
+                            <constraint firstItem="NwF-qW-1Uv" firstAttribute="centerY" secondItem="wJf-Z9-ODO" secondAttribute="centerY" id="Fxg-g5-kEZ"/>
                             <constraint firstItem="aSh-fR-gwt" firstAttribute="centerY" secondItem="wJf-Z9-ODO" secondAttribute="centerY" id="GKG-MM-5zx"/>
                             <constraint firstItem="Gtx-Ne-Vxg" firstAttribute="centerX" secondItem="iOI-cd-rev" secondAttribute="centerX" id="GxV-Ai-Tyd"/>
                             <constraint firstItem="5eN-dZ-7GX" firstAttribute="top" secondItem="Gtx-Ne-Vxg" secondAttribute="bottom" constant="8" id="Lva-cO-lfp"/>
                             <constraint firstItem="bi4-pV-3Ik" firstAttribute="centerX" secondItem="iOI-cd-rev" secondAttribute="centerX" id="MRV-HI-buP"/>
                             <constraint firstItem="wJf-Z9-ODO" firstAttribute="leading" secondItem="iOI-cd-rev" secondAttribute="leadingMargin" constant="32" id="Olb-qu-OPO"/>
-                            <constraint firstItem="Rd5-bj-jNY" firstAttribute="width" secondItem="aSh-fR-gwt" secondAttribute="width" id="RRH-6o-KYZ"/>
+                            <constraint firstItem="NNS-al-VEF" firstAttribute="trailing" secondItem="Rd5-bj-jNY" secondAttribute="trailing" id="RuY-i2-7mD"/>
+                            <constraint firstItem="2fZ-rc-t1s" firstAttribute="width" secondItem="aSh-fR-gwt" secondAttribute="width" id="S6c-XM-w41"/>
                             <constraint firstItem="BFi-gJ-9qs" firstAttribute="top" secondItem="Rd5-bj-jNY" secondAttribute="bottom" constant="40" id="SSW-H0-txm"/>
+                            <constraint firstItem="2fZ-rc-t1s" firstAttribute="leading" secondItem="NwF-qW-1Uv" secondAttribute="trailing" constant="8" id="YQP-Zj-UhX"/>
+                            <constraint firstItem="NNS-al-VEF" firstAttribute="centerY" secondItem="wJf-Z9-ODO" secondAttribute="centerY" id="bmY-jz-i2W"/>
                             <constraint firstItem="BFi-gJ-9qs" firstAttribute="trailing" secondItem="Rd5-bj-jNY" secondAttribute="trailing" id="fqZ-LO-vYa"/>
                             <constraint firstItem="Rd5-bj-jNY" firstAttribute="centerY" secondItem="l7N-od-4EN" secondAttribute="centerY" id="nFg-4u-k6R"/>
+                            <constraint firstItem="NwF-qW-1Uv" firstAttribute="leading" secondItem="aSh-fR-gwt" secondAttribute="trailing" constant="4" id="npy-Pz-cF1"/>
                             <constraint firstItem="Rd5-bj-jNY" firstAttribute="leading" secondItem="aSh-fR-gwt" secondAttribute="leading" id="oWk-dM-tc0"/>
                             <constraint firstItem="bi4-pV-3Ik" firstAttribute="top" secondItem="5eN-dZ-7GX" secondAttribute="bottom" constant="78" id="p4v-qj-Zcl"/>
                             <constraint firstItem="5eN-dZ-7GX" firstAttribute="trailing" secondItem="Gtx-Ne-Vxg" secondAttribute="trailing" id="rSp-Ef-sq8"/>
@@ -1455,13 +1508,14 @@
                     <connections>
                         <outlet property="baseDateInput" destination="Rd5-bj-jNY" id="Pf4-wj-UCk"/>
                         <outlet property="eddLbl" destination="Gtx-Ne-Vxg" id="7tL-UK-MAW"/>
+                        <outlet property="gestationalDaysInput" destination="2fZ-rc-t1s" id="0LM-Gx-Bi3"/>
                         <outlet property="gestationalWeekInput" destination="aSh-fR-gwt" id="jjh-DA-3vy"/>
                         <outlet property="resetBtn" destination="bi4-pV-3Ik" id="sXB-Vm-HTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YN8-3R-fz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1342" y="143"/>
+            <point key="canvasLocation" x="1341.5999999999999" y="142.57871064467767"/>
         </scene>
     </scenes>
 </document>
