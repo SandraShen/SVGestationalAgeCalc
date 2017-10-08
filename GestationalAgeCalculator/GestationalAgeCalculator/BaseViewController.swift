@@ -130,7 +130,7 @@ class BaseViewController: UIViewController {
     // - parameter -
     // -- weeks:    妊娠週数
     // -- baseDate:   基準日
-    func calcEddFromGestationalWeeks(weeks: Int, baseDate: Date) -> String {
+    func calcEddFromGestationalWeeks(weeks: Int, days: Int, baseDate: Date) -> String {
         // 計算に使用される日付の時刻を0時0分0秒に指定
         let base = cal.startOfDay(for: baseDate)
         
@@ -139,8 +139,8 @@ class BaseViewController: UIViewController {
             return "****"
         }
         // 基準日から妊娠週数を減算
-        let week: Int = 0 - (weeks * 7)
-        let res = cal.date(byAdding: .day, value: week, to: base)
+        let totalDays: Int = 0 - (weeks * 7 + days)
+        let res = cal.date(byAdding: .day, value: totalDays, to: base)
         guard let startDate = res else {
             return "****"
         }

@@ -116,11 +116,11 @@
 				B62C20A61F6CC5CD00673BD1 /* EddViewController.swift */,
 				6CECDCCB1F70BA8600C45085 /* BmiViewController.swift */,
 				6C68C4C21F738BAF003DCE6E /* QuizViewController.swift */,
+				B6F35BE81F7FD29E00064109 /* GestationalWeekViewController.swift */,
 				B657F28E1F6407460099A52F /* Main.storyboard */,
 				B657F2911F6407460099A52F /* Assets.xcassets */,
 				B657F2931F6407460099A52F /* LaunchScreen.storyboard */,
 				B657F2961F6407460099A52F /* Info.plist */,
-				B6F35BE81F7FD29E00064109 /* GestationalWeekViewController.swift */,
 			);
 			path = GestationalAgeCalculator;
 			sourceTree = "<group>";
