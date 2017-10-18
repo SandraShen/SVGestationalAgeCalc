@@ -119,7 +119,7 @@ extension GestationalWeekViewController: UITextFieldDelegate {
 extension GestationalWeekViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         let weeks = Array(0..<43)
-        let days = Array(0..<8)
+        let days = Array(0..<7)
         if pickerView.tag == 0 {
             return weeks[row].description
         } else {
@@ -145,7 +145,7 @@ extension GestationalWeekViewController: UIPickerViewDataSource {
         if pickerView.tag == 0 {
             return 43
         } else {
-            return 8
+            return 7
         }
     }
 }

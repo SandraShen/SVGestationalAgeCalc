@@ -28,8 +28,8 @@ class QuizViewController: BaseViewController {
     // MARK: Member variables
     var first: Int!
     var second: Int!
-    var answer: Int!
-    var isPlus = true
+    var answer: Double!
+    var operationKey: Int!
     var isStarted = false
     
     var digitPicker: UIPickerView!
@@ -58,10 +58,16 @@ class QuizViewController: BaseViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             self.operationLbl.text = "+"
-            self.isPlus = true
+            self.operationKey = OperationKey.plus.rawValue
         case 1:
             self.operationLbl.text = "-"
-            self.isPlus = false
+            self.operationKey = OperationKey.minus.rawValue
+        case 2:
+            self.operationLbl.text = "×"
+            self.operationKey = OperationKey.multiply.rawValue
+        case 3:
+            self.operationLbl.text = "÷"
+            self.operationKey = OperationKey.divide.rawValue
         default:
             break
         }
@@ -174,34 +180,46 @@ class QuizViewController: BaseViewController {
             default: break
             }
             
-            self.quizCalc(operationFlg: self.isPlus, first: first, second: second)
+            self.quizCalc(operationKey: self.operationKey, first: first, second: second)
         }
     }
     
-    func quizCalc(operationFlg: Bool, first: Int, second: Int) {        
+    func quizCalc(operationKey: Int, first: Int, second: Int) {
         self.firstNumberLbl.text = String(first)
         self.secondNumberLbl.text = String(second)
         
-        var answer: Int!
-        if operationFlg {
-            answer = first + second
-            print("@@ + answer : \(answer)")
-        } else {
-            answer = first - second
-            print("@@ - answer : \(answer)")
+        var answer: Double!
+        
+        switch operationKey {
+        case OperationKey.plus.rawValue:
+            answer = Double(first + second)
+        case OperationKey.minus.rawValue:
+            answer = Double(first - second)
+        case OperationKey.multiply.rawValue:
+            answer = Double(first * second)
+        case OperationKey.divide.rawValue:
+            if second == 0 {
+                answer = 0
+            } else {
+                answer = Double(first) / Double(second)
+            }
+        default:
+            break
         }
         
         self.answer = answer
     }
     
     func checkAnswer(answer: String) {
-        if answer == String(self.answer) {
-            self.checkIconBtn.setImage(#imageLiteral(resourceName: "check"), for: .normal)
-        } else {
-            self.checkIconBtn.setImage(#imageLiteral(resourceName: "cross"), for: .normal)
-            self.answerLbl.text = String(self.answer)
-        }
-        self.checkIconBtn.isHidden = false
+        self.answerLbl.text = String(self.answer)
+//        if answer == String(self.answer) {
+//            self.checkIconBtn.setImage(#imageLiteral(resourceName: "check"), for: .normal)
+//            self.answerLbl.text = String(self.answer)
+//        } else {
+//            self.checkIconBtn.setImage(#imageLiteral(resourceName: "cross"), for: .normal)
+//            self.answerLbl.text = String(self.answer)
+//        }
+//        self.checkIconBtn.isHidden = false
     }
     
     func arc4random(lower: UInt32, upper: UInt32) -> UInt32 {
@@ -250,4 +268,11 @@ extension QuizViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
+}
+
+enum OperationKey: Int {
+    case plus
+    case minus
+    case multiply
+    case divide
 }
