@@ -65,7 +65,7 @@ class GestationalWeekViewController: BaseViewController {
     }
     
     // MARK: methods
-    func handleDatePicker() {
+    @objc func handleDatePicker() {
         self.baseDate = self.datePicker.date
         self.baseDateInput.text = self.formatteDateForPicker(date: self.datePicker.date)
     }

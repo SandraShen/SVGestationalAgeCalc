@@ -144,7 +144,7 @@ class EddViewController: BaseViewController {
     }
     
     // datepicker制御
-    func handleDatePicker(){
+    @objc func handleDatePicker() {
         if self.eddInput.isFirstResponder {
             self.eddDate = self.eddDatePicker.date
             self.eddInput.text = self.formatteDateForPicker(date: self.eddDatePicker.date)

@@ -157,7 +157,7 @@ class LmpViewController: BaseViewController {
     }
     
     // datepicker制御
-    func handleDatePicker() {
+    @objc func handleDatePicker() {
         if self.lmpInput.isFirstResponder {
             self.lmpDate = self.lmpDatePicker.date
             self.lmpInput.text = self.formatteDateForPicker(date: self.lmpDatePicker.date)
