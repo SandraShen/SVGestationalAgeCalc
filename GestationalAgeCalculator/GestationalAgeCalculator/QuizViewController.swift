@@ -28,9 +28,8 @@ class QuizViewController: BaseViewController {
     // MARK: Member variables
     var first: Int!
     var second: Int!
-    var answer: Double!
-    var operationKey: Int!
-    var isStarted = false
+    var answer: Int!
+    var operationKey: OperationKey!
     
     var digitPicker: UIPickerView!
     
@@ -42,184 +41,230 @@ class QuizViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.digitPicker = UIPickerView()
-        self.digitPicker.delegate = self
-        self.digitPicker.dataSource = self
+        digitPicker = UIPickerView()
+        digitPicker.delegate = self
+        digitPicker.dataSource = self
         
-        self.firstNumberDigit.inputAccessoryView = self.makeDoneButtonToPicker()
-        self.secondNumberDigit.inputAccessoryView = self.makeDoneButtonToPicker()
-        self.answerInput.inputAccessoryView = self.makeDoneMinusButtonToPicker()
+        firstNumberDigit.inputAccessoryView = makeDoneButtonToPicker()
+        secondNumberDigit.inputAccessoryView = makeDoneButtonToPicker()
+        answerInput.inputAccessoryView = makeDoneMinusButtonToPicker()
         
-        self.checkIconBtn.isHidden = true
+        checkIconBtn.isHidden = true
+        
+        // 初期値は足し算
+        operationLbl.text = "+"
+        operationKey = .plus
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        digitPicker.selectRow(1, inComponent: 0, animated: false)
+        firstNumberDigit.text = digit[digitPicker.selectedRow(inComponent: 0)]
+        secondNumberDigit.text = digit[digitPicker.selectedRow(inComponent: 0)]
+        firstRandomDigit = digitPicker.selectedRow(inComponent: 0)
+        secondRandomDigit = digitPicker.selectedRow(inComponent: 0)
+        start()
     }
     
     // MARK: IBActions
     @IBAction func operationChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.operationLbl.text = "+"
-            self.operationKey = OperationKey.plus.rawValue
+            operationKey = .plus
         case 1:
-            self.operationLbl.text = "-"
-            self.operationKey = OperationKey.minus.rawValue
+            operationKey = .minus
         case 2:
-            self.operationLbl.text = "×"
-            self.operationKey = OperationKey.multiply.rawValue
+            operationKey = .multiply
         case 3:
-            self.operationLbl.text = "÷"
-            self.operationKey = OperationKey.divide.rawValue
+            operationKey = .divide
         default:
             break
         }
+        operationLbl.text = operationKey.dispStr
+        answerLbl.text = nil
+        startQuiz(operationKey: operationKey)
     }
     
     @IBAction func startBtnTapped(_ sender: UIButton) {
-        if !self.isStarted {
-            guard self.firstNumberDigit.text != nil, self.firstNumberDigit.text != "" else {
-                return
-            }
-            
-            guard self.secondNumberDigit.text != nil, self.secondNumberDigit.text != "" else {
-                return
-            }
-            
-            self.startBtn.setTitle("次の問題", for: .normal)
-            self.isStarted = true
-        } else {
-            self.answerInput.text = ""
-            self.checkIconBtn.isHidden = true
-            self.answerLbl.text = ""
-        }
-        self.startQuiz()
+        start()
     }
     
     @IBAction func answerBtnTapped(_ sender: UIButton) {
-        if self.answer != nil {
-            self.answerLbl.text = String(self.answer)
+        if let answer = self.answer {
+            answerLbl.text = String(answer)
+            checkIconBtn.isHidden = !(answerLbl.text == answerInput.text)
         }
     }
     
     @IBAction func endBtnTapped(_ sender: UIButton) {
-        self.firstNumberDigit.text = ""
-        self.secondNumberDigit.text = ""
-        self.firstNumberLbl.text = ""
-        self.secondNumberLbl.text = ""
-        self.answerInput.text = ""
-        self.answerLbl.text = ""
-        self.answer = nil
+        firstNumberDigit.text = ""
+        secondNumberDigit.text = ""
+        firstNumberLbl.text = ""
+        secondNumberLbl.text = ""
+        answerInput.text = ""
+        answerLbl.text = ""
+        answer = nil
         
-        self.checkIconBtn.isHidden = true
+        checkIconBtn.isHidden = true
         
-        self.startBtn.setTitle("開始", for: .normal)
-        self.isStarted = false
+        startBtn.setTitle("開始", for: .normal)
     }
     
     // MARK: methods
     // doneボタンアクション
-    func doneButtonAction() {
-        self.firstNumberDigit.resignFirstResponder()
-        self.secondNumberDigit.resignFirstResponder()
-        
-        if self.answerInput.isFirstResponder && self.answer != nil {
-            if let text = self.answerInput.text {
-                if text != "" {
-                    self.checkAnswer(answer: text)
-                }
-            }
+    @objc func doneButtonAction() {
+        firstNumberDigit.resignFirstResponder()
+        secondNumberDigit.resignFirstResponder()
+        answerInput.resignFirstResponder()
+        guard let _ = answer else {
+            return
         }
-        self.answerInput.resignFirstResponder()
+        
+        guard let text = answerInput.text, !text.isEmpty else {
+            return
+        }
+        
+        checkAnswer(answer: text)
     }
     
     func toggleMinus() {
-        if let text = self.answerInput.text {
-            var newText = text
-            if newText.hasPrefix("-") {
-                if let range = newText.range(of: "-") {
-                    newText.removeSubrange(range)
-                    self.answerInput.text = newText
-                }
+        guard let text = answerInput.text else {
+            return
+        }
+        
+        var newText = text
+        if newText.hasPrefix("-") {
+            if let range = newText.range(of: "-") {
+                newText.removeSubrange(range)
+                answerInput.text = newText
+            }
+        } else {
+            if newText != "" {
+                answerInput.text = "-" + newText
             } else {
-                if newText != "" {
-                    self.answerInput.text = "-" + newText
-                } else {
-                    self.answerInput.text = "-"
-                }
+                answerInput.text = "-"
             }
         }
     }
     
-    func startQuiz() {
-        if self.firstNumberDigit.text != "" && self.secondNumberDigit.text != "" {
-            // 桁数の応じてrandom範囲を指定
-            var first = 10
-            var second = 10
-            
-            // 一つ目
-            switch self.firstRandomDigit {
-            case 0:
-                first = Int(arc4random_uniform(10))
-            case 1:
-                first = Int(self.arc4random(lower: 10, upper: 99))
-            case 2:
-                first = Int(self.arc4random(lower: 100, upper: 999))
-            case 3:
-                first = Int(self.arc4random(lower: 1000, upper: 9999))
-            default: break
-            }
-            
-            // 二つ目
-            switch  self.secondRandomDigit {
+    func start() {
+        guard let firstNumberDigit = firstNumberDigit.text, !firstNumberDigit.isEmpty else {
+            return
+        }
+        
+        guard let secondNumberDigit = secondNumberDigit.text, !secondNumberDigit.isEmpty else {
+            return
+        }
+        
+        answerLbl.text = nil
+        answerInput.text = nil
+        checkIconBtn.isHidden = true
+        startBtn.setTitle("次の問題", for: .normal)
+        startQuiz(operationKey: operationKey)
+    }
+    
+    func startQuiz(operationKey: OperationKey) {
+        guard firstNumberDigit.text != "", secondNumberDigit.text != "" else {
+            return
+        }
+        
+        // 桁数の応じてrandom範囲を指定
+        var first = 10
+        var second = 10
+        var cheatAnswer = 0
+        /*
+         割り算 A/B=Answer の場合、Bとanswerに乱数を入れる
+         A=B*Answer
+         桁数ラベルを　「二つ目の数の桁数」、「解の桁数」に変更
+         */
+        guard operationKey != .divide else {
+            // 一つ目：
+            switch firstRandomDigit {
             case 0:
                 second = Int(arc4random_uniform(10))
             case 1:
-                second = Int(self.arc4random(lower: 10, upper: 99))
+                second = Int(arc4random(lower: 10, upper: 99))
             case 2:
-                second = Int(self.arc4random(lower: 100, upper: 999))
+                second = Int(arc4random(lower: 100, upper: 999))
             case 3:
-                second = Int(self.arc4random(lower: 1000, upper: 9999))
+                second = Int(arc4random(lower: 1000, upper: 9999))
+            default: break
+            }
+            // 二つ目：（答えに乱数）
+            switch secondRandomDigit {
+            case 0:
+                cheatAnswer = Int(arc4random_uniform(10))
+            case 1:
+                cheatAnswer = Int(arc4random(lower: 10, upper: 99))
+            case 2:
+                cheatAnswer = Int(arc4random(lower: 100, upper: 999))
+            case 3:
+                cheatAnswer = Int(arc4random(lower: 1000, upper: 9999))
             default: break
             }
             
-            self.quizCalc(operationKey: self.operationKey, first: first, second: second)
+            first = second * cheatAnswer
+            quizCalc(operationKey: operationKey, first: first, second: second, cheatAnswer: cheatAnswer)
+            
+            return
         }
+        
+        // 一つ目
+        switch firstRandomDigit {
+        case 0:
+            first = Int(arc4random_uniform(10))
+        case 1:
+            first = Int(arc4random(lower: 10, upper: 99))
+        case 2:
+            first = Int(arc4random(lower: 100, upper: 999))
+        case 3:
+            first = Int(arc4random(lower: 1000, upper: 9999))
+        default: break
+        }
+        
+        // 二つ目
+        switch  secondRandomDigit {
+        case 0:
+            second = Int(arc4random_uniform(10))
+        case 1:
+            second = Int(arc4random(lower: 10, upper: 99))
+        case 2:
+            second = Int(arc4random(lower: 100, upper: 999))
+        case 3:
+            second = Int(arc4random(lower: 1000, upper: 9999))
+        default: break
+        }
+        
+        quizCalc(operationKey: operationKey, first: first, second: second)
     }
     
-    func quizCalc(operationKey: Int, first: Int, second: Int) {
-        self.firstNumberLbl.text = String(first)
-        self.secondNumberLbl.text = String(second)
+    func quizCalc(operationKey: OperationKey, first: Int, second: Int, cheatAnswer: Int? = nil) {
         
-        var answer: Double!
+        var answer: Int!
         
         switch operationKey {
-        case OperationKey.plus.rawValue:
-            answer = Double(first + second)
-        case OperationKey.minus.rawValue:
-            answer = Double(first - second)
-        case OperationKey.multiply.rawValue:
-            answer = Double(first * second)
-        case OperationKey.divide.rawValue:
-            if second == 0 {
-                answer = 0
-            } else {
-                answer = Double(first) / Double(second)
+        case .plus:
+            answer = QuizCal(first: first, second: second, answer: 0).sum()
+        case .minus:
+            answer = QuizCal(first: first, second: second, answer: 0).del()
+        case .multiply:
+            answer = QuizCal(first: first, second: second, answer: 0).mul()
+        case .divide:
+            guard let cAnswer = cheatAnswer else {
+                break
             }
-        default:
-            break
+            answer = cAnswer
         }
         
         self.answer = answer
+        
+        firstNumberLbl.text = String(first)
+        secondNumberLbl.text = String(second)
     }
     
     func checkAnswer(answer: String) {
-        self.answerLbl.text = String(self.answer)
-//        if answer == String(self.answer) {
-//            self.checkIconBtn.setImage(#imageLiteral(resourceName: "check"), for: .normal)
-//            self.answerLbl.text = String(self.answer)
-//        } else {
-//            self.checkIconBtn.setImage(#imageLiteral(resourceName: "cross"), for: .normal)
-//            self.answerLbl.text = String(self.answer)
-//        }
-//        self.checkIconBtn.isHidden = false
+        answerLbl.text = String(answer)
     }
     
     func arc4random(lower: UInt32, upper: UInt32) -> UInt32 {
@@ -234,10 +279,10 @@ class QuizViewController: BaseViewController {
 extension QuizViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField.tag != 1 {
-            textField.inputView = self.digitPicker
-            textField.text = self.digit[self.digitPicker.selectedRow(inComponent: 0)]
-            self.firstRandomDigit = self.digitPicker.selectedRow(inComponent: 0)
-            self.secondRandomDigit = self.digitPicker.selectedRow(inComponent: 0)
+            textField.inputView = digitPicker
+            textField.text = digit[digitPicker.selectedRow(inComponent: 0)]
+            firstRandomDigit = digitPicker.selectedRow(inComponent: 0)
+            secondRandomDigit = digitPicker.selectedRow(inComponent: 0)
         }
         return true
     }
@@ -245,24 +290,24 @@ extension QuizViewController: UITextFieldDelegate {
 
 extension QuizViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.digit[row]
+        return digit[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if self.firstNumberDigit.isFirstResponder {
-            self.firstNumberDigit.text = self.digit[row]
-            self.firstRandomDigit = row
+        if firstNumberDigit.isFirstResponder {
+            firstNumberDigit.text = digit[row]
+            firstRandomDigit = row
         }
-        if self.secondNumberDigit.isFirstResponder {
-            self.secondNumberDigit.text = self.digit[row]
-            self.secondRandomDigit = row
+        if secondNumberDigit.isFirstResponder {
+            secondNumberDigit.text = digit[row]
+            secondRandomDigit = row
         }
     }
 }
 
 extension QuizViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.digit.count
+        return digit.count
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -275,4 +320,17 @@ enum OperationKey: Int {
     case minus
     case multiply
     case divide
+    
+    var dispStr: String {
+        switch self {
+        case .plus:
+            return "+"
+        case .minus:
+            return "-"
+        case .multiply:
+            return "*"
+        case .divide:
+            return "/"
+        }
+    }
 }

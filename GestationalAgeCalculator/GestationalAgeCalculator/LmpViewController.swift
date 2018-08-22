@@ -141,7 +141,7 @@ class LmpViewController: BaseViewController {
     }
     
     // doneボタンアクション
-    func doneButtonAction() {
+    @objc func doneButtonAction() {
         self.lmpInput.resignFirstResponder()
         self.baseDateInput.resignFirstResponder()
         
