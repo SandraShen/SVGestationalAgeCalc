@@ -14,7 +14,8 @@ class QuizViewController: BaseViewController {
     @IBOutlet weak var secondNumberDigit: UITextField!  // 二つ目の数字の桁数
     @IBOutlet weak var answerInput: UITextField!        // 答え入力textField
     @IBOutlet weak var operationSegment: UISegmentedControl!    // 計算符号切り替えセグメント
-    
+    @IBOutlet weak var firstLbl: UILabel!
+    @IBOutlet weak var secondLbl: UILabel!
     @IBOutlet weak var firstNumberLbl: UILabel!
     @IBOutlet weak var secondNumberLbl: UILabel!
     @IBOutlet weak var operationLbl: UILabel!
@@ -81,6 +82,8 @@ class QuizViewController: BaseViewController {
         default:
             break
         }
+        firstLbl.text = operationKey.firstLabelText
+        secondLbl.text = operationKey.secondLabelText
         operationLbl.text = operationKey.dispStr
         answerLbl.text = nil
         startQuiz(operationKey: operationKey)
@@ -331,6 +334,22 @@ enum OperationKey: Int {
             return "*"
         case .divide:
             return "/"
+        }
+    }
+    var firstLabelText: String {
+        switch  self {
+        case .plus, .minus, .multiply:
+            return "一つ目の数の桁数"
+        case .divide:
+            return "二つ目の数の桁数"
+        }
+    }
+    var secondLabelText: String {
+        switch self {
+        case .plus, .minus, .multiply:
+            return "二つ目の数の桁数"
+        case .divide:
+            return "解の桁数　　　　"
         }
     }
 }

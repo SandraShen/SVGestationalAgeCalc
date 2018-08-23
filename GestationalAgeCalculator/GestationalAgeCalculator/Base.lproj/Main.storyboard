@@ -1060,12 +1060,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NB1-bo-B5n">
-                                <rect key="frame" x="24" y="96" width="144" height="24"/>
+                                <rect key="frame" x="24" y="96" width="128" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="EQW-DF-YJi"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="一つ目の数字の桁数">
+                                    <fragment content="一つ目の数の桁数">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="16" name="HiraginoSans-W3"/>
@@ -1076,12 +1076,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emq-nX-oEy">
-                                <rect key="frame" x="24" y="156" width="144" height="24"/>
+                                <rect key="frame" x="24" y="156" width="128" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="5y4-nL-B4k"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="二つ目の数字の桁数">
+                                    <fragment content="二つ目の数の桁数">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="16" name="HiraginoSans-W3"/>
@@ -1092,7 +1092,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5aN-IT-nGY">
-                                <rect key="frame" x="192" y="93" width="56" height="30"/>
+                                <rect key="frame" x="176" y="93" width="56" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="dn2-4e-Y2d"/>
                                 </constraints>
@@ -1104,7 +1104,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bG-nV-jRl">
-                                <rect key="frame" x="192" y="153" width="56" height="30"/>
+                                <rect key="frame" x="176" y="153" width="56" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="TuN-iO-Smu"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="wmE-BI-Use"/>
@@ -1133,7 +1133,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yhU-Yt-8I4">
-                                <rect key="frame" x="192" y="210" width="115" height="29"/>
+                                <rect key="frame" x="176" y="210" width="115" height="29"/>
                                 <segments>
                                     <segment title="＋"/>
                                     <segment title="-"/>
@@ -1154,7 +1154,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vc1-Da-FQZ">
-                                <rect key="frame" x="146" y="286" width="148" height="1"/>
+                                <rect key="frame" x="130" y="286" width="148" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Yrf-kh-KKg"/>
@@ -1162,7 +1162,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bda-Yt-boY">
-                                <rect key="frame" x="146" y="319" width="148" height="1"/>
+                                <rect key="frame" x="130" y="319" width="148" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="aNq-nn-xBt"/>
@@ -1175,14 +1175,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFA-bI-pKv">
-                                <rect key="frame" x="146" y="376" width="148" height="1"/>
+                                <rect key="frame" x="130" y="376" width="148" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="GhC-Mr-hMf"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TOR-W1-S31">
-                                <rect key="frame" x="146" y="254" width="148" height="24"/>
+                                <rect key="frame" x="130" y="254" width="148" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="DEn-IC-gM9"/>
                                 </constraints>
@@ -1191,7 +1191,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W81-9L-lRs">
-                                <rect key="frame" x="146" y="287" width="148" height="24"/>
+                                <rect key="frame" x="130" y="287" width="148" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Egm-lv-auK"/>
                                 </constraints>
@@ -1214,7 +1214,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGv-7s-n7U">
-                                <rect key="frame" x="170" y="328" width="100" height="40"/>
+                                <rect key="frame" x="154" y="328" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="lkS-al-vDa"/>
                                     <constraint firstAttribute="height" constant="40" id="scw-Fz-9FZ"/>
@@ -1235,7 +1235,7 @@
                                 <state key="normal" image="check"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cox-bH-dez">
-                                <rect key="frame" x="146" y="391" width="148" height="24"/>
+                                <rect key="frame" x="130" y="391" width="148" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="L6f-Hp-KyZ"/>
                                 </constraints>
@@ -1244,7 +1244,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu7-YD-lvP">
-                                <rect key="frame" x="170" y="617" width="59" height="35"/>
+                                <rect key="frame" x="154" y="617" width="59" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="初期化"/>
                                 <connections>
@@ -1316,10 +1316,12 @@
                         <outlet property="answerLbl" destination="cox-bH-dez" id="QaO-sy-kdB"/>
                         <outlet property="checkIconBtn" destination="Lds-Af-2Ej" id="79l-Vw-ftv"/>
                         <outlet property="endBtn" destination="eu7-YD-lvP" id="UfQ-4u-VLB"/>
+                        <outlet property="firstLbl" destination="NB1-bo-B5n" id="9Uu-RB-fwm"/>
                         <outlet property="firstNumberDigit" destination="5aN-IT-nGY" id="nnU-RQ-eP0"/>
                         <outlet property="firstNumberLbl" destination="TOR-W1-S31" id="7O8-LL-FxL"/>
                         <outlet property="operationLbl" destination="QyJ-3m-XK4" id="Sze-Cu-7Gz"/>
                         <outlet property="operationSegment" destination="yhU-Yt-8I4" id="2QZ-f4-V7g"/>
+                        <outlet property="secondLbl" destination="emq-nX-oEy" id="bPE-4o-ChN"/>
                         <outlet property="secondNumberDigit" destination="6bG-nV-jRl" id="5YV-Lg-T6m"/>
                         <outlet property="secondNumberLbl" destination="W81-9L-lRs" id="NMo-Cs-vAf"/>
                         <outlet property="startBtn" destination="4Qa-3A-4n7" id="rcC-wI-6WN"/>
