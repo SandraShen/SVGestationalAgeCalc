@@ -31,77 +31,78 @@ class GestationalWeekViewController: BaseViewController {
         super.viewDidLoad()
         
         // keyboardにdoneボタンを追加
-        self.gestationalWeekInput.inputAccessoryView = self.makeDoneButtonToPicker()
-        self.gestationalDaysInput.inputAccessoryView = self.makeDoneButtonToPicker()
-        self.baseDateInput.inputAccessoryView = self.makeDoneButtonToPicker()
+        gestationalWeekInput.inputAccessoryView = makeDoneButtonToPicker()
+        gestationalDaysInput.inputAccessoryView = makeDoneButtonToPicker()
+        baseDateInput.inputAccessoryView = makeDoneButtonToPicker()
         
         // 基準日datepickerを生成
-        self.datePicker = UIDatePicker()
-        self.datePicker.datePickerMode = .date
-        self.datePicker.calendar = Calendar(identifier: .gregorian)
-        self.datePicker.addTarget(self, action: #selector(self.handleDatePicker), for: .valueChanged)
+        datePicker = UIDatePicker()
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.datePickerMode = .date
+        datePicker.calendar = Calendar(identifier: .gregorian)
+        datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
         
         // 妊娠週数・日数選択pickerを生成
-        self.weekPicker = UIPickerView()
-        self.daysPicker = UIPickerView()
-        self.weekPicker.tag = 0
-        self.daysPicker.tag = 1
-        self.weekPicker.delegate = self
-        self.daysPicker.delegate = self
-        self.weekPicker.dataSource = self
-        self.daysPicker.dataSource = self
+        weekPicker = UIPickerView()
+        daysPicker = UIPickerView()
+        weekPicker.tag = 0
+        daysPicker.tag = 1
+        weekPicker.delegate = self
+        daysPicker.delegate = self
+        weekPicker.dataSource = self
+        daysPicker.dataSource = self
         
-        self.weekPicker.selectRow(5, inComponent: 0, animated: false)
-        self.daysPicker.selectRow(0, inComponent: 0, animated: false)
+        weekPicker.selectRow(5, inComponent: 0, animated: false)
+        daysPicker.selectRow(0, inComponent: 0, animated: false)
         
         // textfield初期値、基準日初期値設定
-        self.gestationalWeekInput.text = self.weekPicker.selectedRow(inComponent: 0).description
-        self.gestationalDaysInput.text = self.daysPicker.selectedRow(inComponent: 0).description
-            self.baseDateInput.text = self.defaultDateString
-        self.baseDate = self.defaultDate
+        gestationalWeekInput.text = weekPicker.selectedRow(inComponent: 0).description
+        gestationalDaysInput.text = daysPicker.selectedRow(inComponent: 0).description
+            baseDateInput.text = defaultDateString
+        baseDate = defaultDate
         
         // 分娩予定日表示は初期値を元に計算
-        self.eddLbl.text = self.calcEddFromGestationalWeeks(weeks: Int(self.gestationalWeekInput.text!)!, days: Int(self.gestationalDaysInput.text!)!, baseDate: self.baseDate)
+        eddLbl.text = calcEddFromGestationalWeeks(weeks: Int(gestationalWeekInput.text!)!, days: Int(gestationalDaysInput.text!)!, baseDate: baseDate)
     }
     
     // MARK: methods
     @objc func handleDatePicker() {
-        self.baseDate = self.datePicker.date
-        self.baseDateInput.text = self.formatteDateForPicker(date: self.datePicker.date)
+        baseDate = datePicker.date
+        baseDateInput.text = formatteDateForPicker(date: datePicker.date)
     }
     
     // doneボタンアクション
     func doneButtonAction() {
-        self.baseDateInput.resignFirstResponder()
-        self.gestationalWeekInput.resignFirstResponder()
-        self.gestationalDaysInput.resignFirstResponder()
-        self.eddLbl.text = self.calcEddFromGestationalWeeks(weeks: Int(self.gestationalWeekInput.text!)!, days: Int(self.gestationalDaysInput.text!)!, baseDate: self.baseDate)
+        baseDateInput.resignFirstResponder()
+        gestationalWeekInput.resignFirstResponder()
+        gestationalDaysInput.resignFirstResponder()
+        eddLbl.text = calcEddFromGestationalWeeks(weeks: Int(gestationalWeekInput.text!)!, days: Int(gestationalDaysInput.text!)!, baseDate: baseDate)
     }
     
     // MARK: IBActions
     // データ初期化
     @IBAction func resetBtnTapped(_ sender: UIButton) {
-        self.baseDate = self.defaultDate
-        self.baseDateInput.text = self.defaultDateString
+        baseDate = defaultDate
+        baseDateInput.text = defaultDateString
         
-        self.weekPicker.selectRow(5, inComponent: 0, animated: false)
-        self.daysPicker.selectRow(0, inComponent: 0, animated: false)
+        weekPicker.selectRow(5, inComponent: 0, animated: false)
+        daysPicker.selectRow(0, inComponent: 0, animated: false)
         
-        self.gestationalWeekInput.text = self.weekPicker.selectedRow(inComponent: 0).description
-        self.gestationalDaysInput.text = self.daysPicker.selectedRow(inComponent: 0).description
+        gestationalWeekInput.text = weekPicker.selectedRow(inComponent: 0).description
+        gestationalDaysInput.text = daysPicker.selectedRow(inComponent: 0).description
         
-        self.eddLbl.text = self.calcEddFromGestationalWeeks(weeks: Int(self.gestationalWeekInput.text!)!, days: Int(self.gestationalDaysInput.text!)!, baseDate: self.baseDate)
+        eddLbl.text = calcEddFromGestationalWeeks(weeks: Int(gestationalWeekInput.text!)!, days: Int(gestationalDaysInput.text!)!, baseDate: baseDate)
     }
 }
 
 extension GestationalWeekViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField.tag == 1 {
-            textField.inputView = self.datePicker
+            textField.inputView = datePicker
         } else if textField.tag == 0 {
-            textField.inputView = self.weekPicker
+            textField.inputView = weekPicker
         } else {
-            textField.inputView = self.daysPicker
+            textField.inputView = daysPicker
         }
         return true
     }
@@ -129,9 +130,9 @@ extension GestationalWeekViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 0 {
-            self.gestationalWeekInput.text = row.description
+            gestationalWeekInput.text = row.description
         } else {
-            self.gestationalDaysInput.text = row.description
+            gestationalDaysInput.text = row.description
         }
     }
 }

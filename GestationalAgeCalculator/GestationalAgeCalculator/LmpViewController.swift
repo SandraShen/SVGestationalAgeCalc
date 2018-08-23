@@ -39,48 +39,50 @@ class LmpViewController: BaseViewController {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupDisplay()
+        setupDisplay()
         
         // keyboardにdoneボタンを追加
-        self.lmpInput.inputAccessoryView = self.makeDoneButtonToPicker()
-        self.baseDateInput.inputAccessoryView = self.makeDoneButtonToPicker()
+        lmpInput.inputAccessoryView = makeDoneButtonToPicker()
+        baseDateInput.inputAccessoryView = makeDoneButtonToPicker()
         
-        self.lmpInput.text = self.defaultDateString
-        self.baseDateInput.text = self.defaultDateString
+        lmpInput.text = defaultDateString
+        baseDateInput.text = defaultDateString
         
-        self.lmpDate = self.defaultDate
-        self.baseDate = self.defaultDate
+        lmpDate = defaultDate
+        baseDate = defaultDate
         
         // 基準日datepickerを生成
-        self.datePicker = UIDatePicker()
-        self.datePicker.datePickerMode = .date
-        self.datePicker.calendar = Calendar(identifier: .gregorian)
-        self.datePicker.addTarget(self, action: #selector(self.handleDatePicker), for: .valueChanged)
+        datePicker = UIDatePicker()
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.datePickerMode = .date
+        datePicker.calendar = Calendar(identifier: .gregorian)
+        datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
         
         // LMPdatepickerを生成
-        self.lmpDatePicker = UIDatePicker()
-        self.lmpDatePicker.datePickerMode = .date
-        self.lmpDatePicker.calendar = Calendar(identifier: .gregorian)
-        self.lmpDatePicker.addTarget(self, action: #selector(self.handleDatePicker), for: .valueChanged)
+        lmpDatePicker = UIDatePicker()
+        lmpDatePicker.timeZone = NSTimeZone.local
+        lmpDatePicker.datePickerMode = .date
+        lmpDatePicker.calendar = Calendar(identifier: .gregorian)
+        lmpDatePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
     }
     
     // MARK: IBAction
     // 入力データ初期化
     @IBAction func resetBtnTapped(_ sender: UIButton) {
-        self.lmpDate = self.defaultDate
-        self.baseDate = self.defaultDate
-        self.baseDateInput.text = self.defaultDateString
-        self.lmpInput.text = self.defaultDateString
-        self.expectedDateOfDeliveryLbl.text = ""
-        self.getaionalWeekLbl.text = "0"
-        self.remainderDaysLbl.text = "0"
-        if self.isJpn {
-            self.totalGetationalDaysLbl.text = "0" + self.totalDaysLbl
+        lmpDate = defaultDate
+        baseDate = defaultDate
+        baseDateInput.text = defaultDateString
+        lmpInput.text = defaultDateString
+        expectedDateOfDeliveryLbl.text = ""
+        getaionalWeekLbl.text = "0"
+        remainderDaysLbl.text = "0"
+        if isJpn {
+            totalGetationalDaysLbl.text = "0" + totalDaysLbl
         } else {
-            self.totalGetationalDaysLbl.text = self.totalDaysLbl + "0"
+            totalGetationalDaysLbl.text = totalDaysLbl + "0"
         }
-        self.datePicker.setDate(self.defaultDate, animated: false)
-        self.lmpDatePicker.setDate(self.defaultDate, animated: false)
+        datePicker.setDate(defaultDate, animated: false)
+        lmpDatePicker.setDate(defaultDate, animated: false)
     }
     
     // MARK: methods
@@ -93,9 +95,9 @@ class LmpViewController: BaseViewController {
         var daysLbl = ""
         var reset = ""
         
-        switch self.language {
+        switch language {
         case "jpn":
-            self.isJpn = true
+            isJpn = true
             
             lmpTitle = "最終月経開始日："
             baseDateTitle = "計算の基準日："
@@ -103,7 +105,7 @@ class LmpViewController: BaseViewController {
             ageTitle = "基準日の妊娠週数"
             weekLbl = "週"
             daysLbl = "日"
-            self.totalDaysLbl = "　日目"
+            totalDaysLbl = "　日目"
             reset = "初期化"
         case "eng":
             lmpTitle = "The first day of the last menstrual period (LMP)"
@@ -112,7 +114,7 @@ class LmpViewController: BaseViewController {
             ageTitle = "Getational Age\n on the Reference Day"
             weekLbl = "week(s)"
             daysLbl = "day(s)"
-            self.totalDaysLbl = "day "
+            totalDaysLbl = "day "
             reset = "Reset"
         case "fre":
             lmpTitle = "Le premier jour de vos dernières règles"
@@ -121,50 +123,50 @@ class LmpViewController: BaseViewController {
             ageTitle = "Âge gestationnel"
             weekLbl = "semaine(s)"
             daysLbl = "jour(s)"
-            self.totalDaysLbl = "jour "
+            totalDaysLbl = "jour "
             reset = "Réinitialiser"
         default:
             break
         }
         self.lmpTitle.text = lmpTitle
         self.baseDateTitle.text = baseDateTitle
-        self.expectedDateOfDeliveryTitle.text = eddTitle
-        self.getationalAgeTitle.text = ageTitle
+        expectedDateOfDeliveryTitle.text = eddTitle
+        getationalAgeTitle.text = ageTitle
         self.weekLbl.text = weekLbl
         self.daysLbl.text = daysLbl
-        if self.isJpn {
-            self.totalGetationalDaysLbl.text = self.totalGetationalDaysLbl.text! + self.totalDaysLbl
+        if isJpn {
+            totalGetationalDaysLbl.text = totalGetationalDaysLbl.text! + totalDaysLbl
         } else {
-            self.totalGetationalDaysLbl.text = self.totalDaysLbl + self.totalGetationalDaysLbl.text!
+            totalGetationalDaysLbl.text = totalDaysLbl + totalGetationalDaysLbl.text!
         }
-        self.resetBtn.setTitle(reset, for: .normal)
+        resetBtn.setTitle(reset, for: .normal)
     }
     
     // doneボタンアクション
     @objc func doneButtonAction() {
-        self.lmpInput.resignFirstResponder()
-        self.baseDateInput.resignFirstResponder()
+        lmpInput.resignFirstResponder()
+        baseDateInput.resignFirstResponder()
         
-        self.expectedDateOfDeliveryLbl.text = self.calcEddFromLmp(fromDate: lmpDate)
-        let (week, remainder, day) = self.calcGetationalAge(fromDate: lmpDate, toDate: baseDate!)
-        self.getaionalWeekLbl.text = week
-        self.remainderDaysLbl.text = remainder
+        expectedDateOfDeliveryLbl.text = calcEddFromLmp(fromDate: lmpDate)
+        let (week, remainder, day) = calcGetationalAge(fromDate: lmpDate, toDate: baseDate!)
+        getaionalWeekLbl.text = week
+        remainderDaysLbl.text = remainder
         if isJpn {
-            self.totalGetationalDaysLbl.text = day + self.totalDaysLbl
+            totalGetationalDaysLbl.text = day + totalDaysLbl
         } else {
-            self.totalGetationalDaysLbl.text = self.totalDaysLbl + day
+            totalGetationalDaysLbl.text = totalDaysLbl + day
         }
     }
     
     // datepicker制御
     @objc func handleDatePicker() {
-        if self.lmpInput.isFirstResponder {
-            self.lmpDate = self.lmpDatePicker.date
-            self.lmpInput.text = self.formatteDateForPicker(date: self.lmpDatePicker.date)
+        if lmpInput.isFirstResponder {
+            lmpDate = lmpDatePicker.date
+            lmpInput.text = formatteDateForPicker(date: lmpDatePicker.date)
         }
-        if self.baseDateInput.isFirstResponder {
-            self.baseDate = self.datePicker.date
-            self.baseDateInput.text = self.formatteDateForPicker(date: self.datePicker.date)
+        if baseDateInput.isFirstResponder {
+            baseDate = datePicker.date
+            baseDateInput.text = formatteDateForPicker(date: datePicker.date)
         }
     }
 }
@@ -173,9 +175,9 @@ extension LmpViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField.tag {
         case 0:
-            textField.inputView = self.lmpDatePicker
+            textField.inputView = lmpDatePicker
         case 1:
-            textField.inputView = self.datePicker
+            textField.inputView = datePicker
         default:
             break
         }

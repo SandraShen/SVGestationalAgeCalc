@@ -36,43 +36,45 @@ class EddViewController: BaseViewController {
     // MARK: life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupDisplay()
+        setupDisplay()
         
         // keyboardにdoneボタンを追加
-        self.eddInput.inputAccessoryView = self.makeDoneButtonToPicker()
-        self.baseDateInput.inputAccessoryView = self.makeDoneButtonToPicker()
+        eddInput.inputAccessoryView = makeDoneButtonToPicker()
+        baseDateInput.inputAccessoryView = makeDoneButtonToPicker()
         
-        self.eddInput.text = self.defaultDateString
-        self.baseDateInput.text = self.defaultDateString
+        eddInput.text = defaultDateString
+        baseDateInput.text = defaultDateString
         
-        self.eddDate = self.defaultDate
-        self.baseDate = self.defaultDate
+        eddDate = defaultDate
+        baseDate = defaultDate
         
         // datepickerを生成
-        self.datePicker = UIDatePicker()
-        self.datePicker.datePickerMode = .date
-        self.datePicker.calendar = Calendar(identifier: .gregorian)
-        self.datePicker.addTarget(self, action: #selector(self.handleDatePicker), for: .valueChanged)
+        datePicker = UIDatePicker()
+        datePicker.timeZone = NSTimeZone.local
+        datePicker.datePickerMode = .date
+        datePicker.calendar = Calendar(identifier: .gregorian)
+        datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
         
-        self.eddDatePicker = UIDatePicker()
-        self.eddDatePicker.datePickerMode = .date
-        self.eddDatePicker.calendar = Calendar(identifier: .gregorian)
-        self.eddDatePicker.addTarget(self, action: #selector(self.handleDatePicker), for: .valueChanged)
+        eddDatePicker = UIDatePicker()
+        eddDatePicker.timeZone = NSTimeZone.local
+        eddDatePicker.datePickerMode = .date
+        eddDatePicker.calendar = Calendar(identifier: .gregorian)
+        eddDatePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
     }
     
     // MARK: IBAction
     // 入力データ初期化
     @IBAction func resetBtnTapped(_ sender: UIButton) {
-        self.baseDate = self.defaultDate
-        self.eddDate = self.defaultDate
-        self.baseDateInput.text = self.defaultDateString
-        self.eddInput.text = self.defaultDateString
-        self.getationalWeek.text = "0"
-        self.remainderDays.text = "0"
-        if self.isJpn {
-            self.totalGetationalDays.text = "0" + self.totalDaysLbl
+        baseDate = defaultDate
+        eddDate = defaultDate
+        baseDateInput.text = defaultDateString
+        eddInput.text = defaultDateString
+        getationalWeek.text = "0"
+        remainderDays.text = "0"
+        if isJpn {
+            totalGetationalDays.text = "0" + totalDaysLbl
         } else {
-            self.totalGetationalDays.text = self.totalDaysLbl + "0"
+            totalGetationalDays.text = totalDaysLbl + "0"
         }
     }
     
@@ -85,16 +87,16 @@ class EddViewController: BaseViewController {
         var daysLbl = ""
         var reset = ""
         
-        switch self.language {
+        switch language {
         case "jpn":
-            self.isJpn = true
+            isJpn = true
             
             eddInputTitle = "分娩予定日："
             baseDateTitle = "計算の基準日："
             ageTitle = "基準日の妊娠週数"
             weekLbl = "週"
             daysLbl = "日"
-            self.totalDaysLbl = "　日目"
+            totalDaysLbl = "　日目"
             reset = "初期化"
         case "eng":
             eddInputTitle = "Expected Date of Delivery"
@@ -103,7 +105,7 @@ class EddViewController: BaseViewController {
             ageTitle = "Getational Age on the Reference Day"
             weekLbl = "week(s)"
             daysLbl = "day(s)"
-            self.totalDaysLbl = "day "
+            totalDaysLbl = "day "
             reset = "Reset"
         case "fre":
             eddInputTitle = "La date présumée de votre accouchement"
@@ -111,47 +113,47 @@ class EddViewController: BaseViewController {
             ageTitle = "Âge gestationnel"
             weekLbl = "semaine(s)"
             daysLbl = "jour(s)"
-            self.totalDaysLbl = "jour "
+            totalDaysLbl = "jour "
             reset = "réinitialiser"
         default:
             break
         }
-        self.eddTitle.text = eddInputTitle
+        eddTitle.text = eddInputTitle
         self.baseDateTitle.text = baseDateTitle
-        self.getationalAgeTitle.text = ageTitle
+        getationalAgeTitle.text = ageTitle
         self.weekLbl.text = weekLbl
-        self.dayLbl.text = daysLbl
-        if self.isJpn {
-            self.totalGetationalDays.text = self.totalGetationalDays.text! + self.totalDaysLbl
+        dayLbl.text = daysLbl
+        if isJpn {
+            totalGetationalDays.text = totalGetationalDays.text! + totalDaysLbl
         } else {
-            self.totalGetationalDays.text = self.totalDaysLbl + self.totalGetationalDays.text!
+            totalGetationalDays.text = totalDaysLbl + totalGetationalDays.text!
         }
-        self.resetBtn.setTitle(reset, for: .normal)
+        resetBtn.setTitle(reset, for: .normal)
     }
     
     // doneボタンアクション
     func doneButtonAction() {
-        self.baseDateInput.resignFirstResponder()
-        self.eddInput.resignFirstResponder()
-        let (week, remainder, day) = self.calcGetationalAgeFromEdd(fromDate: self.eddDate, toDate: self.baseDate)
-        self.getationalWeek.text = week
-        self.remainderDays.text = remainder
-        if self.isJpn {
-            self.totalGetationalDays.text = day + self.totalDaysLbl
+        baseDateInput.resignFirstResponder()
+        eddInput.resignFirstResponder()
+        let (week, remainder, day) = calcGetationalAgeFromEdd(fromDate: eddDate, toDate: baseDate)
+        getationalWeek.text = week
+        remainderDays.text = remainder
+        if isJpn {
+            totalGetationalDays.text = day + totalDaysLbl
         } else {
-            self.totalGetationalDays.text = self.totalDaysLbl + day
+            totalGetationalDays.text = totalDaysLbl + day
         }
     }
     
     // datepicker制御
     @objc func handleDatePicker() {
-        if self.eddInput.isFirstResponder {
-            self.eddDate = self.eddDatePicker.date
-            self.eddInput.text = self.formatteDateForPicker(date: self.eddDatePicker.date)
+        if eddInput.isFirstResponder {
+            eddDate = eddDatePicker.date
+            eddInput.text = formatteDateForPicker(date: eddDatePicker.date)
         }
-        if self.baseDateInput.isFirstResponder {
-            self.baseDate = self.datePicker.date
-            self.baseDateInput.text = self.formatteDateForPicker(date: self.datePicker.date)
+        if baseDateInput.isFirstResponder {
+            baseDate = datePicker.date
+            baseDateInput.text = formatteDateForPicker(date: datePicker.date)
         }
     }
 }
@@ -159,9 +161,9 @@ class EddViewController: BaseViewController {
 extension EddViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField.tag == 0 {
-            textField.inputView = self.eddDatePicker
+            textField.inputView = eddDatePicker
         } else {
-            textField.inputView = self.datePicker
+            textField.inputView = datePicker
         }
         return true
     }
