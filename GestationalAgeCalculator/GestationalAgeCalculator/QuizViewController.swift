@@ -12,7 +12,6 @@ class QuizViewController: BaseViewController {
     // MARK: IBOutlets
     @IBOutlet weak var firstNumberDigit: UITextField!   // 一つ目の数字の桁数
     @IBOutlet weak var secondNumberDigit: UITextField!  // 二つ目の数字の桁数
-    @IBOutlet weak var answerInput: UITextField!        // 答え入力textField
     @IBOutlet weak var operationSegment: UISegmentedControl!    // 計算符号切り替えセグメント
     @IBOutlet weak var firstLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
@@ -21,7 +20,6 @@ class QuizViewController: BaseViewController {
     @IBOutlet weak var operationLbl: UILabel!
     @IBOutlet weak var answerLbl: UILabel!
     
-    @IBOutlet weak var checkIconBtn: UIButton!
     @IBOutlet weak var answerBtn: UIButton!
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var endBtn: UIButton!
@@ -48,9 +46,6 @@ class QuizViewController: BaseViewController {
         
         firstNumberDigit.inputAccessoryView = makeDoneButtonToPicker()
         secondNumberDigit.inputAccessoryView = makeDoneButtonToPicker()
-        answerInput.inputAccessoryView = makeDoneMinusButtonToPicker()
-        
-        checkIconBtn.isHidden = true
         
         // 初期値は足し算
         operationLbl.text = "+"
@@ -96,7 +91,6 @@ class QuizViewController: BaseViewController {
     @IBAction func answerBtnTapped(_ sender: UIButton) {
         if let answer = self.answer {
             answerLbl.text = String(answer)
-            checkIconBtn.isHidden = !(answerLbl.text == answerInput.text)
         }
     }
     
@@ -105,11 +99,8 @@ class QuizViewController: BaseViewController {
         secondNumberDigit.text = ""
         firstNumberLbl.text = ""
         secondNumberLbl.text = ""
-        answerInput.text = ""
         answerLbl.text = ""
         answer = nil
-        
-        checkIconBtn.isHidden = true
         
         startBtn.setTitle("開始", for: .normal)
     }
@@ -119,35 +110,8 @@ class QuizViewController: BaseViewController {
     @objc func doneButtonAction() {
         firstNumberDigit.resignFirstResponder()
         secondNumberDigit.resignFirstResponder()
-        answerInput.resignFirstResponder()
         guard let _ = answer else {
             return
-        }
-        
-        guard let text = answerInput.text, !text.isEmpty else {
-            return
-        }
-        
-        checkAnswer(answer: text)
-    }
-    
-    func toggleMinus() {
-        guard let text = answerInput.text else {
-            return
-        }
-        
-        var newText = text
-        if newText.hasPrefix("-") {
-            if let range = newText.range(of: "-") {
-                newText.removeSubrange(range)
-                answerInput.text = newText
-            }
-        } else {
-            if newText != "" {
-                answerInput.text = "-" + newText
-            } else {
-                answerInput.text = "-"
-            }
         }
     }
     
@@ -161,8 +125,6 @@ class QuizViewController: BaseViewController {
         }
         
         answerLbl.text = nil
-        answerInput.text = nil
-        checkIconBtn.isHidden = true
         startBtn.setTitle("次の問題", for: .normal)
         startQuiz(operationKey: operationKey)
     }
@@ -264,10 +226,6 @@ class QuizViewController: BaseViewController {
         
         firstNumberLbl.text = String(first)
         secondNumberLbl.text = String(second)
-    }
-    
-    func checkAnswer(answer: String) {
-        answerLbl.text = String(answer)
     }
     
     func arc4random(lower: UInt32, upper: UInt32) -> UInt32 {
