@@ -79,19 +79,7 @@ class BmiViewController: BaseViewController {
     // MARK: IBAction
     // 画面表示初期化
     @IBAction func clearBtnTapped(_ sender: UIButton) {
-        heightBeforDecimal.text = ""
-        heightAfterDecimal.text = ""
-        weightBeforDecimal.text = ""
-        weightAfterDecimal.text = ""
-        bmiResultLbl.text = ""
-        
-        heightBefore = ""
-        heightAfter = "0"
-        weightBefore = ""
-        weightAfter = "0"
-    }
-    
-    @IBAction func calcBtnTapped(_ sender: UIButton) {
+        clearup()
         calc()
     }
     
@@ -104,6 +92,20 @@ class BmiViewController: BaseViewController {
             let roundRes = round(res * 100) / 100
             bmiResultLbl.text = String(format: "%.2f", roundRes)
         }
+    }
+    
+    /// 初期化
+    private func clearup() {
+        heightBeforDecimal.text = "150"
+        heightAfterDecimal.text = "0"
+        weightBeforDecimal.text = "50"
+        weightAfterDecimal.text = "0"
+        bmiResultLbl.text = ""
+        
+        heightBefore = "150"
+        heightAfter = "0"
+        weightBefore = "50"
+        weightAfter = "0"
     }
     
     @objc func doneButtonAction() {
@@ -123,6 +125,7 @@ class BmiViewController: BaseViewController {
             weightAfter = weightAfterDecimal.text ?? "0"
             weightAfterDecimal.resignFirstResponder()
         }
+        calc()
     }
     
     private func transferHeight() -> Bool {

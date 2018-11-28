@@ -981,16 +981,6 @@
                                     <action selector="clearBtnTapped:" destination="IN4-Pg-XSa" eventType="touchUpInside" id="NaT-gF-HTY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gq6-NQ-R9z">
-                                <rect key="frame" x="166.5" y="287" width="42" height="33"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="21"/>
-                                <state key="normal" title="計算">
-                                    <color key="titleColor" red="0.16078431369999999" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="calcBtnTapped:" destination="IN4-Pg-XSa" eventType="touchUpInside" id="bc9-Sw-HJV"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1016,10 +1006,8 @@
                             <constraint firstItem="UcR-fW-zbY" firstAttribute="top" secondItem="jvD-mf-3G6" secondAttribute="bottom" constant="160" id="P3T-y7-TjI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UcR-fW-zbY" secondAttribute="trailing" constant="56" id="Pu7-7r-2Ce"/>
                             <constraint firstItem="RM1-LP-NoH" firstAttribute="centerX" secondItem="d0P-Gk-azX" secondAttribute="centerX" id="Vr8-eB-mDw"/>
-                            <constraint firstItem="Gq6-NQ-R9z" firstAttribute="top" secondItem="jvD-mf-3G6" secondAttribute="bottom" constant="44" id="Vzu-7Q-vZ8"/>
                             <constraint firstItem="RrP-KM-YRI" firstAttribute="centerY" secondItem="txj-RH-j6c" secondAttribute="centerY" id="Wof-zE-9Sx"/>
                             <constraint firstItem="0Ja-vV-xMZ" firstAttribute="leading" secondItem="RrP-KM-YRI" secondAttribute="trailing" constant="8" id="XJY-uJ-RcB"/>
-                            <constraint firstItem="Gq6-NQ-R9z" firstAttribute="centerX" secondItem="d0P-Gk-azX" secondAttribute="centerX" id="bTK-QZ-Ozb"/>
                             <constraint firstItem="rju-ud-uA2" firstAttribute="leading" secondItem="txj-RH-j6c" secondAttribute="trailing" constant="8" id="eJr-ST-Kvc"/>
                             <constraint firstItem="99k-q4-Whh" firstAttribute="leading" secondItem="b5s-gB-4DR" secondAttribute="trailing" constant="8" id="f5o-fP-UV1"/>
                             <constraint firstItem="Zod-Tc-ckA" firstAttribute="top" secondItem="b5s-gB-4DR" secondAttribute="bottom" constant="128" id="fxY-JZ-Kr4"/>

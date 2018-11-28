@@ -289,9 +289,9 @@ enum OperationKey: Int {
         case .minus:
             return "-"
         case .multiply:
-            return "*"
+            return "×"
         case .divide:
-            return "/"
+            return "÷"
         }
     }
     var firstLabelText: String {
