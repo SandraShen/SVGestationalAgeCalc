@@ -99,8 +99,8 @@ class LmpViewController: BaseViewController {
         case "jpn":
             isJpn = true
             
-            lmpTitle = "最終月経開始日："
-            baseDateTitle = "計算の基準日："
+            lmpTitle = "最終月経\n開始日："
+            baseDateTitle = "計算の\n基準日："
             eddTitle = "分娩予定日（修正なし）："
             ageTitle = "基準日の妊娠週数"
             weekLbl = "週"
